@@ -54,7 +54,7 @@ const Testimonial = () => {
                         <p className='mt-[15px] font-semibold'>Comment:</p>
                     </div>
                 </SwiperSlide>
-                <div className="autoplay-progress" slot="container-end">
+                <div className="autoplay-progress text-white" slot="container-end">
                     <svg viewBox="0 0 0 0" ref={progressCircle}>
                     </svg>
                     <span ref={progressContent}></span>

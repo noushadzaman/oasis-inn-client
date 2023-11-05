@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const PromotionSection = () => {
     return (
-        <div className="promotion-section mb-[150px]">
+        <div className="promotion-section mb-[150px] min-h-[500px] xl:h-[700px]">
             <div className="h-full flex flex-col justify-center space-y-3 md:space-y-5 w-full pt-[90px]">
                 <h2 className="text-white text-[20px] md:text-3xl lg:text-7xl font-semibold ml-10">Only at<br></br> Oasis Inn</h2>
                 <p className="text-white text-[15px] md:text-[25px] ml-10">Love & Savings: 50% Off for Young Couples</p>
