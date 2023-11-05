@@ -7,3 +7,12 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+.promotion-section {
+    background-image: url("https://i.ibb.co/V2GzD25/patrick-robert-doyle-AH8z-KXq-FITA-unsplash.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
