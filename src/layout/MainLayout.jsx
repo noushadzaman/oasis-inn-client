@@ -5,8 +5,8 @@ const MainLayout = () => {
     return (
         <div className="min-h-[100vh]">
             <Navbar>
-                <Outlet></Outlet>
             </Navbar>
+                <Outlet></Outlet>
         </div>
     );
 };

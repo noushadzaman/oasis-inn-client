@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavbarItems from './NavbarItems';
 import SidebarItems from './SidebarItems';
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
 
     return (
         <div className="drawer">
@@ -24,7 +24,7 @@ const Navbar = ({ children }) => {
                     </div>
                 </div>
                 {/* Page content here */}
-                {children}
+
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
