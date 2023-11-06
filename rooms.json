@@ -6,7 +6,7 @@
         "price": 77,
         "room_size": "600 sq. ft.",
         "availability": true,
-        "featured": true,
+        "featured": false,
         "available_seats": 8,
         "imageUrls": [
             "https://i.ibb.co/Lt0nBWF/room1img1.webp",
@@ -33,14 +33,13 @@
         "price": 68,
         "room_size": "400 sq. ft.",
         "availability": true,
-        "featured": true,
+        "featured": false,
         "available_seats": 6,
         "imageUrls": [
             "https://i.ibb.co/gwRrgxn/room2img1.webp",
             "https://i.ibb.co/sQD8Lqj/room2img2.webp",
             "https://i.ibb.co/YBVkjV4/room2img3.webp",
-            "https://i.ibb.co/ftvC4Bd/room2img4.webp",
-            "https://i.ibb.co/WPsYdpt/room2img5.webp"
+            "https://i.ibb.co/ftvC4Bd/room2img4.webp"
         ],
         "special_offers": [
             "Lock on bedroom door",
@@ -59,7 +58,7 @@
         "price": 86,
         "room_size": "450 sq. ft.",
         "availability": true,
-        "featured": true,
+        "featured": false,
         "available_seats": 9,
         "imageUrls": [
             "https://i.ibb.co/8Bspg4B/room3img1.webp",
@@ -85,14 +84,14 @@
         "price": 62,
         "room_size": "480 sq. ft.",
         "availability": true,
-        "featured": true,
+        "featured": false,
         "available_seats": 5,
         "imageUrls": [
-            "https://i.ibb.co/8Bspg4B/room3img1.webp",
-            "https://i.ibb.co/QK9xqxT/room3img2.webp",
-            "https://i.ibb.co/VB0qr70/room3img3.webp",
-            "https://i.ibb.co/kHfyNSz/room1img4.webp",
-            "https://i.ibb.co/LR7sbJN/room3img5.webp"
+            "https://i.ibb.co/8g46nSB/room4img1.webp",
+            "https://i.ibb.co/z8Tcyz0/room4img2.webp",
+            "https://i.ibb.co/0YYNLV9/room4img3.webp",
+            "https://i.ibb.co/tPXyXC0/room4img4.webp",
+            "https://i.ibb.co/1fkxDcV/room4img5.webp"
         ],
         "special_offers": [
             "Lock on bedroom door",
@@ -100,6 +99,206 @@
             "Wifi",
             "Dedicated workspace",
             "Free parking on premises"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Dubai, United Arab Emirates",
+        "title": "Silkhaus Modern 1 BDR | Unique Design | Downtown",
+        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
+        "price": 178,
+        "room_size": "780 sq. ft.",
+        "availability": true,
+        "featured": true,
+        "available_seats": 8,
+        "imageUrls": [
+            "https://i.ibb.co/NFDHDzt/room5img1.webp",
+            "https://i.ibb.co/TWK58Pg/room5img2.webp",
+            "https://i.ibb.co/9vg6fLb/room5img3.webp",
+            "https://i.ibb.co/Dz6F8NR/room5img4.webp",
+            "https://i.ibb.co/LZB4GjT/room5img5.webp"
+        ],
+        "special_offers": [
+            "Kitchen",
+            "Lock on bedroom door",
+            "Wifi",
+            "Dedicated workspace",
+            "Free parking on premises"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Balmain, New South Wales, Australia",
+        "title": "Quality Furnishing & Expansive Harbour Views",
+        "description": "Discover the best of Dubai, with this one-bedroom DIFC apartment with balcony views over the city. It’ll be easy to simply show up and start living in this contemporary Blueground furnished apartment with its fully-equipped kitchen, pretty living room, and our dedicated, on-the-ground support",
+        "price": 234,
+        "room_size": "550 sq. ft.",
+        "availability": true,
+        "featured": true,
+        "available_seats": 8,
+        "imageUrls": [
+            "https://i.ibb.co/fSWsvpp/room7img1.webp",
+            "https://i.ibb.co/pzpGsqT/room7img2.webp",
+            "https://i.ibb.co/L6r3qMZ/room7img3.webp",
+            "https://i.ibb.co/qMhSBJp/room7img4.webp",
+            "https://i.ibb.co/m5TjQDZ/room7img5.webp"
+        ],
+        "special_offers": [
+            "Valley view",
+            "Harbor view",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Venice, Veneto, Italy",
+        "title": "Maison des Artistes",
+        "description": "The Grand Canal glints below the terraces of this reimagined palazzo. The building features a shared reading area tucked under beams and a rooftop terrace with a bar. Local designer Umberto Branchini wrapped each of the 4 apartments in jewel-toned stucco, sleek millwork, and terrazzo floors. The San Polo location is close to churches and eateries, and a 20-minute walk from the Piazza San Marco.",
+        "price": 2585,
+        "room_size": "650 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/Tr8XqJ7/room8img1.webp",
+            "https://i.ibb.co/HdhsJZf/room8img2.webp",
+            "https://i.ibb.co/hD6Pk5P/room8img3.webp",
+            "https://i.ibb.co/RSgkQ7n/room8img4.webp"
+        ],
+        "special_offers": [
+            "Canal view",
+            "Property manager",
+            "Kitchen",
+            "Wifi",
+            "TV"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Dubai, United Arab Emirates",
+        "title": "Spacious Apartment With Panoramic Skyline Views",
+        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
+        "price": 3755,
+        "room_size": "650 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/xfhn6Jg/room6img1.webp",
+            "https://i.ibb.co/cFzx2FK/room6img2.webp",
+            "https://i.ibb.co/TrVL5pd/room6img3.webp",
+            "https://i.ibb.co/BGBTKQw/room6img4.webp",
+            "https://i.ibb.co/0XQvz4S/room6img5.webp"
+        ],
+        "special_offers": [
+            "Valley view",
+            "Harbor view",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Dubai, United Arab Emirates",
+        "title": "Apartment With tremendous Skyline Views",
+        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
+        "price": 3755,
+        "room_size": "650 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/7N221gG/room9img1.webp",
+            "https://i.ibb.co/PFxWy1T/room9img2.webp",
+            "https://i.ibb.co/zmvfJjr/room9img3.webp"
+        ],
+        "special_offers": [
+            "Valley view",
+            "Harbor view",
+            "Kitchen",
+            "Wifi",
+            "Free parking on premises"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Cape Town, Western Cape, South Africa",
+        "title": "UPS, Sea Views & Personalised Services",
+        "description": "Three immaculate levels are yours to enjoy at this elegant Camps Bay home. Natural light oozes inside, igniting the sophisticated décor. Glass railings on the balcony allow unobstructed views of the Atlantic Ocean. Hike winding trails at Table Mountain, spend an afternoon at the beach, or settle in for a taste of local cuisine at a waterfront restaurant. After dark, the pool offers a starlit swim.",
+        "price": 1170,
+        "room_size": "550 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/4mQwRt0/room10img1.webp",
+            "https://i.ibb.co/845bDmr/room10img2.webp",
+            "https://i.ibb.co/4sVYwxD/room9img3.webp"
+        ],
+        "special_offers": [
+            "Chef service - 1 meal per day",
+            "Airport transfer",
+            "Driver",
+            "Childcare",
+            "Cook service - 3 meals per day",
+            "Waitstaff"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Bangkok, Thailand",
+        "title": "Siri Sala Private Thai Villa",
+        "description": "Thai homes were the inspiration for this villa. Ponds, gardens & saltwater pool create a natural setting that pay tribute to traditional waterside homes on stilts. The 3 modern 'ruens' or thai houses sharing a common courtyard are complemented by a reconstructed wooden heritage house, and all feature original details like murals and reclaimed teak furniture. The best of Bangkok is reachable by car or boat through the property's private pier. Featured in major travel & design publications.",
+        "price": 5266,
+        "room_size": "950 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/YRhDZNH/room11img1.webp",
+            "https://i.ibb.co/Jp0Vby2/room11img2.webp",
+            "https://i.ibb.co/ygsD9g0/room11img3.webp"
+        ],
+        "special_offers": [
+            "Garden view",
+            "River view",
+            "Waterfront",
+            "Roundtrip airport transfer",
+            "Chef"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Paris, Île-de-France, France",
+        "title": "Arty & Luxurious flat at Opéra",
+        "description": "For a truly Parisian experience, this artistic villa shows off the depth of design for which France is famous. Overlooking a European-style courtyard, this bright apartment enjoys frescoed ceilings, parquet flooring, and an eclectic mix of art and designer furnishings throughout. In the neighbourhood, you’ll find beautiful parks, bakeries, restaurants, and high-end fashion houses.",
+        "price": 1581,
+        "room_size": "650 sq. ft.",
+        "availability": false,
+        "featured": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/42czWjX/room12img1.webp",
+            "https://i.ibb.co/whYx6Qx/room12img2.webp",
+            "https://i.ibb.co/HCB91k8/room12img3.webp"
+        ],
+        "special_offers": [
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "TV",
+            "Washer"
         ],
         "booking": [],
         "reviews": []

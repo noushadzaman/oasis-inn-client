@@ -1,12 +1,12 @@
-import Banner from "./Banner";
 import FeaturedRooms from "./FeaturedRooms";
 import PromotionSection from "./PromotionSection";
+import SwiperJs from "./SwiperJs";
 import Testimonial from "./Testimonial";
 
 const Home = () => {
     return (
         <div className="xl:px-[100px]">
-            <Banner></Banner>
+            <SwiperJs></SwiperJs>
             <FeaturedRooms></FeaturedRooms>
             <PromotionSection></PromotionSection>
             <Testimonial></Testimonial>

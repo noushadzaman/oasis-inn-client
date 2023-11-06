@@ -6,16 +6,22 @@ const Rooms = () => {
     const [allRooms, setAllRooms] = useState([])
 
     useEffect(() => {
-        fetch('../../../rooms.json')
+        fetch('http://localhost:5000/rooms')
             .then(res => res.json())
             .then(data => {
                 setAllRooms(data);
             })
     }, [])
-    console.table(allRooms);
+    // useEffect(() => {
+    //     fetch('../../../rooms.json')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAllRooms(data);
+    //         })
+    // }, [])
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 mt-[250px] gap-[50px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 my-[150px] gap-[50px]">
             {
                 allRooms.map(room => <SingleRoom
                     key={room.title}

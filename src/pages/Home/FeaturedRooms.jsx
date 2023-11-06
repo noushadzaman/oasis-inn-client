@@ -13,16 +13,14 @@ const FeaturedRooms = () => {
         fetch('../../../rooms.json')
             .then(res => res.json())
             .then(data => setAllRooms(data))
-    }, [])
-    console.log(allRooms)
+    }, []);
+
     useEffect(() => {
         if (allRooms) {
             const featuredRooms = allRooms.filter(room => room.featured === true);
             setFeaturedRooms(featuredRooms);
         }
-    }, [allRooms])
-
-    console.log(featuredRooms);
+    }, [allRooms]);
 
     return (
         <div className='my-[80px]'>
@@ -39,7 +37,7 @@ const FeaturedRooms = () => {
             >
                 {
                     featuredRooms.map(featuredRoom => <SwiperSlide
-                        key={SwiperSlide}
+                        key={featuredRoom}
                     >
                         <img className='max-w-[450px] h-[100px] md:h-[300px] object-cover rounded-lg' src={featuredRoom.imageUrls[0]} alt="" />
                     </SwiperSlide>)

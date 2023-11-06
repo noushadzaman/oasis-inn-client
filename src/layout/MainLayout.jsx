@@ -4,10 +4,10 @@ import Footer from "../shared/Footer";
 
 const MainLayout = () => {
     return (
-        <div className="min-h-[100vh]">
+        <div className="min-h-[100vh] relative">
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
