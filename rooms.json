@@ -1,0 +1,81 @@
+[
+    {
+        "location": "Nantes, Pays de la Loire, France",
+        "title": "Centre place Graslin - Private room La Cambronne",
+        "description": "Enjoy an elegant 20 m2 private room in a renovated 160 m2 apartment in the heart of Nantes city center in the very popular 'Graslin' district. The charm of the old renovated: ceiling height of 3.60 m, period parquet, black marble fireplace, comfortable bathroom.",
+        "price": 77,
+        "room_size": "600 sq. ft.",
+        "availability": true,
+        "featured": false,
+        "available_seats": 8,
+        "imageUrls": [
+            "https://i.ibb.co/Lt0nBWF/room1img1.webp",
+            "https://i.ibb.co/mJDz1Bq/room1img2.webp",
+            "https://i.ibb.co/M6zpxn2/room1img3.webp",
+            "https://i.ibb.co/kHfyNSz/room1img4.webp",
+            "https://i.ibb.co/KzwZjX0/room1img5.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "City skyline view",
+            "Wifi",
+            "Dedicated workspace",
+            "40",
+            "HDTV with Netflix, Disney+"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Lyon, Auvergne-Rhône-Alpes, France",
+        "title": "Private garden, quiet, easy parking",
+        "description": "This room with personal bathrooms, in an apartment renovate with quality materials,  to welcome you in the heart of Lyon. On the mythical Croix Rousse hill, nice surprises to discover await you. Quiet, charming, in a green setting: a real luxury.",
+        "price": 68,
+        "room_size": "400 sq. ft.",
+        "availability": true,
+        "featured": true,
+        "available_seats": 6,
+        "imageUrls": [
+            "https://i.ibb.co/gwRrgxn/room2img1.webp",
+            "https://i.ibb.co/sQD8Lqj/room2img2.webp",
+            "https://i.ibb.co/YBVkjV4/room2img3.webp",
+            "https://i.ibb.co/ftvC4Bd/room2img4.webp",
+            "https://i.ibb.co/WPsYdpt/room2img5.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "Kitchen",
+            "Wifi - 33 Mbps",
+            "Free street parking",
+            "Free washer - In unit"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Milano, Lombardia, Italy",
+        "title": "Double room in lovely apartment",
+        "description": "Hi I'm Valentina! I'm 31 and I'm an interior designer.I rent a room with a double bed in my cute apartment. I love sharing experiences, getting to know new people, and giving you helpful tips for your stay.The apartment is cozy, with everything you need. You can use all common areas as long as it is maintained with respect to the things of others. :) Please let me know if you have any questions!",
+        "price": 86,
+        "room_size": "450 sq. ft.",
+        "availability": true,
+        "featured": true,
+        "available_seats": 9,
+        "imageUrls": [
+            "https://i.ibb.co/8Bspg4B/room3img1.webp",
+            "https://i.ibb.co/QK9xqxT/room3img2.webp",
+            "https://i.ibb.co/VB0qr70/room3img3.webp",
+            "https://i.ibb.co/kHfyNSz/room1img4.webp",
+            "https://i.ibb.co/LR7sbJN/room3img5.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "Courtyard view",
+            "Kitchen",
+            "Wifi",
+            "Free street parking"
+        ],
+        "booking": [],
+        "reviews": []
+    }
+]

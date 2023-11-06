@@ -5,7 +5,6 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
     const { loading, user, logOut } = useContext(AuthContext);
-    console.log(user)
 
     const handleLogOut = () => {
         logOut()
@@ -24,10 +23,10 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
-                            } to="gallery">Gallery</NavLink>
+                            } to="rooms">Rooms</NavLink>
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
-                            } to="rooms">Rooms</NavLink>
+                            } to="gallery">Gallery</NavLink>
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
                             } to="myBookings">My Bookings</NavLink>
@@ -39,7 +38,7 @@ const Navbar = () => {
                             } to="faq">FAQ</NavLink>
                         </ul>
                     </div>
-                    <NavLink to='/' className="btn btn-ghost normal-case text-xl">daisyUI</NavLink>
+                    <NavLink to='/' className="btn btn-ghost normal-case text-xl">OASIS INN</NavLink>
 
 
 
@@ -51,10 +50,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        !user?.email && !loading ?
-                            <Link to="/login" className="py-1 btn bg-[#ccb89b] border-0 rounded-[2px] mr-5 text-white ml-10">Login</Link>
-                            :
-
+                        user?.email && !loading ?
                             <div className="dropdown dropdown-left max-h-[40px] m-0 p-0">
                                 <label tabIndex={0} className="m-1">
                                     <div className="avatar">
@@ -69,6 +65,8 @@ const Navbar = () => {
                                         onClick={handleLogOut}>Log out</button>
                                 </ul>
                             </div>
+                            :
+                            <Link to="/login" className="py-1 btn bg-[#ccb89b] border-0 rounded-[2px] mr-5 text-white ml-10">Login</Link>
                     }
                 </div>
             </div >
