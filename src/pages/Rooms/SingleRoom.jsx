@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const SingleRoom = ({ room }) => {
     const { location, availability, title, price, imageUrls } = room;
@@ -42,6 +43,7 @@ const SingleRoom = ({ room }) => {
                 </div>
                 <p className='mb-1'>{title}</p>
                 <p><span className='font-semibold'>${price}</span> night</p>
+                <Link to="/roomDetail" className='btn btn-sm btn-primary mt-1'>Details</Link>
             </div>
         </div>
 

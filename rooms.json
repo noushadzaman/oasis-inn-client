@@ -6,7 +6,7 @@
         "price": 77,
         "room_size": "600 sq. ft.",
         "availability": true,
-        "featured": false,
+        "featured": true,
         "available_seats": 8,
         "imageUrls": [
             "https://i.ibb.co/Lt0nBWF/room1img1.webp",
@@ -74,6 +74,32 @@
             "Kitchen",
             "Wifi",
             "Free street parking"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Seddon, Victoria, Australia",
+        "title": "Comfy room in modern apartment",
+        "description": "A modern, comfortable room in the charming and peaceful neighbourhood of Seddon, just over fifteen minutes from the centre of Melbourne.",
+        "price": 62,
+        "room_size": "480 sq. ft.",
+        "availability": true,
+        "featured": true,
+        "available_seats": 5,
+        "imageUrls": [
+            "https://i.ibb.co/8Bspg4B/room3img1.webp",
+            "https://i.ibb.co/QK9xqxT/room3img2.webp",
+            "https://i.ibb.co/VB0qr70/room3img3.webp",
+            "https://i.ibb.co/kHfyNSz/room1img4.webp",
+            "https://i.ibb.co/LR7sbJN/room3img5.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Free parking on premises"
         ],
         "booking": [],
         "reviews": []

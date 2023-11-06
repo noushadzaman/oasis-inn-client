@@ -7,6 +7,7 @@ import Faq from "../pages/Faq/Faq";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Rooms from "../pages/Rooms/Rooms";
+import RoomDetail from "../pages/RoomDetail/RoomDetail";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/rooms',
                 element: <Rooms></Rooms>
+            },
+            {
+                path: '/roomDetail/:id',
+                element: <RoomDetail></RoomDetail>
             },
             {
                 path: '/faq',
