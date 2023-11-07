@@ -8,40 +8,41 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css"
 import formatDate from "../../utilities/DateFormater";
+import ReviewRoom from "./ReviewRoom";
+import ReviewContainer from "./ReviewContainer";
 
 const RoomDetail = () => {
     const roomDetail = useLoaderData();
-    // const [startDate, setStartDate] = useState(new Date());
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const { user } = useContext(AuthContext);
     const email = user?.email;
     let { _id, location, title, description, price, room_size, availability, featured, available_seats, imageUrls, special_offers, booking, reviews } = roomDetail;
-    console.log(booking)
 
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //TODO booking 
     let isBooked = true;
-    if (booking.length == 0) {
+    if (booking?.length == 0) {
         isBooked = false;
     }
-
     const today = moment().format("YYYY-MM-DD");
-    // let lowestCheckIn = booking[0]?.checkIn;
-    let highestCheckOut = booking[0]?.checkOut;
-    for (let i = 0; i < booking.length; i++) {
-        // if (lowestCheckIn > booking[i]?.checkIn) {
-        //     lowestCheckIn = booking[i]?.checkIn;
-        // }
-        if (highestCheckOut < booking[i]?.checkOut) {
-            highestCheckOut = booking[i]?.checkOut;
+    if (!booking?.length == 0) {
+        let highestCheckOut = booking[0]?.checkOut;
+        for (let i = 0; i < booking.length; i++) {
+
+            if (highestCheckOut < booking[i]?.checkOut) {
+                highestCheckOut = booking[i]?.checkOut;
+            }
+        }
+        if (today <= highestCheckOut) {
+            isBooked = true;
+        }
+        else {
+            isBooked = false
         }
     }
-    if (today <= highestCheckOut) {
-        isBooked = true;
-    }
-    else {
-        isBooked = false
-    }
-
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //TODO booking 
     const datePicker = (e) => {
         e.preventDefault();
         const checkIn = formatDate(startDate);
@@ -58,9 +59,6 @@ const RoomDetail = () => {
             checkOut: checkOut
         }
         booking = [...booking, bookingDates];
-
-        console.log(isBooked);
-
         if (today < highestCheckOut) {
             isBooked = true;
         }
@@ -75,7 +73,6 @@ const RoomDetail = () => {
                 description,
                 image: imageUrls[0]
             }
-
             fetch('http://localhost:5000/bookings', {
                 method: "POST",
                 headers: {
@@ -103,12 +100,14 @@ const RoomDetail = () => {
         }
 
     }
+    //TODO booking 
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     return (
         <div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto py-[80px]">
             <p className="text-3xl mb-3">{title}</p>
             <div className="flex gap-3 text-xl underline mb-3">
-                <p>{reviews.length} reviews</p>
+                <p>{reviews?.length} reviews</p>
                 <p>{location}</p>
             </div>
             <div className="grid grid-cols-9 grid-rows-2 gap-[3px] md:gap-[10px] ">
@@ -134,6 +133,7 @@ const RoomDetail = () => {
                         }
                     </ul>
                     <hr className="my-3" />
+
                 </div>
                 <div>
                     <div
@@ -166,6 +166,13 @@ const RoomDetail = () => {
                     </div>
                 </div>
             </div>
+            <ReviewRoom
+                email={email}
+                _id={_id}
+            ></ReviewRoom>
+            <ReviewContainer
+                _id={_id}
+            ></ReviewContainer>
         </div>
     );
 };

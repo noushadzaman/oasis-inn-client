@@ -25,10 +25,10 @@ const Navbar = () => {
                             } to="rooms">Rooms</NavLink>
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
-                            } to="gallery">Gallery</NavLink>
+                            } to="myBookings">My Bookings</NavLink>
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
-                            } to="myBookings">My Bookings</NavLink>
+                            } to="gallery">Gallery</NavLink>
                             <NavLink className={({ isActive }) =>
                                 isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm'
                             } to="location">Location</NavLink>

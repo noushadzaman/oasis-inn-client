@@ -7,7 +7,6 @@ const MyBookings = () => {
     const { user } = useContext(AuthContext);
     const email = user?.email;
 
-
     useEffect(() => {
         fetch(`http://localhost:5000/bookings?email=${email}`)
             .then(res => res.json())
