@@ -1,57 +1,108 @@
 import { useLoaderData } from "react-router-dom";
 import { GoChecklist } from 'react-icons/go';
 import moment from 'moment';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css"
+import formatDate from "../../utilities/DateFormater";
 
 const RoomDetail = () => {
     const roomDetail = useLoaderData();
-    const { _id, location, title, description, price, room_size, availability, featured, available_seats, imageUrls, special_offers, booking, reviews } = roomDetail;
-
+    // const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     const { user } = useContext(AuthContext);
-    const email = user.email;
-    // const date = moment().format("YYYY-MM-DD");
+    const email = user?.email;
+    let { _id, location, title, description, price, room_size, availability, featured, available_seats, imageUrls, special_offers, booking, reviews } = roomDetail;
+    console.log(booking)
 
+    let isBooked = true;
+    if (booking.length == 0) {
+        isBooked = false;
+    }
+
+    const today = moment().format("YYYY-MM-DD");
+    // let lowestCheckIn = booking[0]?.checkIn;
+    let highestCheckOut = booking[0]?.checkOut;
+    for (let i = 0; i < booking.length; i++) {
+        // if (lowestCheckIn > booking[i]?.checkIn) {
+        //     lowestCheckIn = booking[i]?.checkIn;
+        // }
+        if (highestCheckOut < booking[i]?.checkOut) {
+            highestCheckOut = booking[i]?.checkOut;
+        }
+    }
+    if (today <= highestCheckOut) {
+        isBooked = true;
+    }
+    else {
+        isBooked = false
+    }
 
     const datePicker = (e) => {
         e.preventDefault();
-        const bookedDate = e.target.date.value;
-        const bookingInfo = {
-            email,
-            bookedDate,
-            _id,
-            price,
-            location,
-            description,
-            image: imageUrls[0]
+        const checkIn = formatDate(startDate);
+        const checkOut = formatDate(endDate);
+        if (checkIn <= today || checkOut <= today) {
+            alert('cant book');
+            return;
+        }
+        if (isBooked) {
+            return alert("it is booked :)");
+        }
+        const bookingDates = {
+            checkIn: checkIn,
+            checkOut: checkOut
+        }
+        booking = [...booking, bookingDates];
+
+        console.log(isBooked);
+
+        if (today < highestCheckOut) {
+            isBooked = true;
         }
 
-        fetch('http://localhost:5000/bookings', {
-            method: "POST",
-            headers: {
-                "content-type": "Application/json"
-            },
-            body: JSON.stringify(bookingInfo)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+        if (!isBooked) {
+            const bookingInfo = {
+                email,
+                bookingDates,
+                _id,
+                price,
+                location,
+                description,
+                image: imageUrls[0]
+            }
+
+            fetch('http://localhost:5000/bookings', {
+                method: "POST",
+                headers: {
+                    "content-type": "Application/json"
+                },
+                body: JSON.stringify(bookingInfo)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+            fetch(`http://localhost:5000/roomDetail/${_id}`, {
+                method: "PATCH",
+                headers: {
+                    "content-type": "Application/json"
+                },
+                body: JSON.stringify(booking)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+        } else {
+            alert('booked')
+        }
 
-        //     fetch('http://localhost:5000/roomDetail/:id', {
-        //         method: "PUT",
-        //         headers: {
-        //             "content-type": "Application/json"
-        //         },
-        //         body: JSON.stringify(bookingInfo)
-        //     })
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             console.log(data)
-        //         })
-        //     console.log(bookingInfo);
     }
-
 
     return (
         <div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto py-[80px]">
@@ -85,10 +136,34 @@ const RoomDetail = () => {
                     <hr className="my-3" />
                 </div>
                 <div>
-                    <form onSubmit={datePicker}>
-                        <input name="date" type="date" />
-                        <input value="submit" type="submit" />
-                    </form>
+                    <div
+                        className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card-body">
+                            <div className="flex justify-between">
+                                <h2 className="card-title mb-5">Per Night ${price}</h2>
+                                <h2 className="card-title mb-5">Reviews: {reviews.length}</h2>
+                            </div>
+                            {
+                                isBooked && <p>Booking will be available after: {highestCheckOut}</p>
+                            }
+                            <h3>From</h3>
+                            <DatePicker
+                                showIcon
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
+                            />
+                            <h3>To</h3>
+                            <DatePicker
+                                showIcon
+                                selected={endDate}
+                                onChange={(date) => setEndDate(date)}
+                            />
+                            <p className="text-lg">Choose a date you want to book at <span>{location}</span></p>
+                        </div>
+                        <button
+                            onClick={datePicker}
+                            className="btn mb-5 mx-3 md:mx-8">Book now!</button>
+                    </div>
                 </div>
             </div>
         </div>

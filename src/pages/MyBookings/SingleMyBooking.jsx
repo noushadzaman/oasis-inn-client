@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SingleMyBooking = ({ myBooking }) => {
-    const { _id, email, bookedDate, price, description, location, image } = myBooking;
+    const { _id, email, bookingDates, price, description, location, image } = myBooking;
     console.log(myBooking)
     return (
 
@@ -24,8 +24,15 @@ const SingleMyBooking = ({ myBooking }) => {
                     </div>
                 </div>
             </td>
-            <td className="text-[25px]">
-                {bookedDate}
+            <td>
+                <div className="text-[19px] space-y-3">
+                    <p>
+                        From: {bookingDates.checkIn}
+                    </p>
+                    <p>
+                        To: {bookingDates.checkOut}
+                    </p>
+                </div>
             </td>
             <td>
                 <input type="date" />
