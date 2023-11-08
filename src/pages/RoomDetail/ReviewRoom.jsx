@@ -18,7 +18,7 @@ const ReviewRoom = ({ email, _id }) => {
     const [rating, setRating] = useState(0);
     // TODO check if userBooked ?
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${email}`)
+        fetch(`https://oasis-inn.web.app/bookings?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setMyBookings(data);
@@ -43,7 +43,7 @@ const ReviewRoom = ({ email, _id }) => {
             date
         }
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://oasis-inn.web.app/reviews`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

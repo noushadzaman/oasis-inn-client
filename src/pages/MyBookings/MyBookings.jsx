@@ -8,7 +8,7 @@ const MyBookings = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${email}`)
+        fetch(`https://oasis-inn.web.app/bookings?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setMyBookings(data);
@@ -37,6 +37,8 @@ const MyBookings = () => {
                             myBookings.map(myBooking => <SingleMyBooking
                                 key={myBooking._id}
                                 myBooking={myBooking}
+                                myBookings={myBookings}
+                                setMyBookings={setMyBookings}
                             ></SingleMyBooking>)
                         }
                     </tbody>

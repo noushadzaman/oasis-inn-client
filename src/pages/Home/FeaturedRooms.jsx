@@ -3,14 +3,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const FeaturedRooms = () => {
     const [allRooms, setAllRooms] = useState([]);
     const [featuredRooms, setFeaturedRooms] = useState([]);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        fetch('../../../rooms.json')
+        fetch('https://oasis-inn.web.app/rooms')
             .then(res => res.json())
             .then(data => setAllRooms(data))
     }, []);
@@ -39,7 +42,9 @@ const FeaturedRooms = () => {
                     featuredRooms.map(featuredRoom => <SwiperSlide
                         key={featuredRoom}
                     >
-                        <img className='max-w-[450px] h-[100px] md:h-[300px] object-cover rounded-lg' src={featuredRoom.imageUrls[0]} alt="" />
+                        <img
+                            onClick={navigate(`/roomDetail/${featuredRoom._id}`)}
+                            className='max-w-[450px] h-[100px] md:h-[300px] object-cover rounded-lg' src={featuredRoom.imageUrls[0]} alt="" />
                     </SwiperSlide>)
                 }
             </Swiper>

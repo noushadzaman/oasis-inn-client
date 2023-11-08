@@ -6,7 +6,7 @@ const Rooms = () => {
     const [allRooms, setAllRooms] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://oasis-inn.web.app/rooms')
             .then(res => res.json())
             .then(data => {
                 setAllRooms(data);

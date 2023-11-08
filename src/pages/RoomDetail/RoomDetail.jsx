@@ -22,15 +22,11 @@ const RoomDetail = () => {
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //TODO booking 
     let isBooked = true;
-    if (booking?.length == 0) {
-        isBooked = false;
-    }
     const today = moment().format("YYYY-MM-DD");
     let highestCheckOut;
     if (!booking?.length == 0) {
         highestCheckOut = booking[0]?.checkOut;
         for (let i = 0; i < booking.length; i++) {
-
             if (highestCheckOut < booking[i]?.checkOut) {
                 highestCheckOut = booking[i]?.checkOut;
             }
@@ -41,6 +37,9 @@ const RoomDetail = () => {
         else {
             isBooked = false
         }
+    }
+    else {
+        isBooked = false;
     }
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //TODO booking 
@@ -60,9 +59,6 @@ const RoomDetail = () => {
             checkOut: checkOut
         }
         booking = [...booking, bookingDates];
-        if (today < highestCheckOut) {
-            isBooked = true;
-        }
 
         if (!isBooked) {
             const bookingInfo = {
@@ -74,7 +70,7 @@ const RoomDetail = () => {
                 description,
                 image: imageUrls[0]
             }
-            fetch('http://localhost:5000/bookings', {
+            fetch('https://oasis-inn.web.app/bookings', {
                 method: "POST",
                 headers: {
                     "content-type": "Application/json"
@@ -85,7 +81,7 @@ const RoomDetail = () => {
                 .then(data => {
                     console.log(data)
                 })
-            fetch(`http://localhost:5000/roomDetail/${_id}`, {
+            fetch(`https://oasis-inn.web.app/roomDetail/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "Application/json"

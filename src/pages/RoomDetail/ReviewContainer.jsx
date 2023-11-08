@@ -6,7 +6,7 @@ import { rating } from "@material-tailwind/react";
 const ReviewContainer = ({ _id }) => {
     const [roomReviews, setRoomReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?room_id=${_id}`, {
+        fetch(`https://oasis-inn.web.app/reviews?room_id=${_id}`, {
             method: "GET",
         })
             .then(res => res.json())

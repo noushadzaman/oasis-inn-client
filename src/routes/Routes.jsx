@@ -9,6 +9,7 @@ import Register from "../pages/Register/Register";
 import Rooms from "../pages/Rooms/Rooms";
 import RoomDetail from "../pages/RoomDetail/RoomDetail";
 import MyBookings from "../pages/MyBookings/MyBookings";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/roomDetail/:id',
-                element: <RoomDetail></RoomDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/roomDetail/${params.id}`)
+                element: <PrivateRoute><RoomDetail></RoomDetail></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://oasis-inn.web.app/roomDetail/${params.id}`)
             },
             {
                 path: '/myBookings',
-                element: <MyBookings></MyBookings>
+                element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
             },
             {
                 path: '/faq',

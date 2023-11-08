@@ -9,7 +9,7 @@ import { AiOutlineStop } from "react-icons/ai";
 import moment from 'moment';
 import daysUntil from "../../utilities/DaysRemaining";
 
-const SingleMyBooking = ({ myBooking }) => {
+const SingleMyBooking = ({ myBooking, myBookings, setMyBookings }) => {
     const { _id, email, bookingDates, price, description, location, image } = myBooking;
     const [startDate, setStartDate] = useState(new Date(bookingDates.checkIn));
     const [endDate, setEndDate] = useState(new Date(bookingDates.checkOut));
@@ -24,7 +24,7 @@ const SingleMyBooking = ({ myBooking }) => {
             checkIn: checkIn,
             checkOut: checkOut
         }
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://oasis-inn.web.app/bookings/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -37,12 +37,33 @@ const SingleMyBooking = ({ myBooking }) => {
             })
     }
 
+    const remainingDays = daysUntil(bookingDates?.checkIn);
+    console.log(remainingDays);
+
+    const handleDelete = (command) => {
+        fetch(`https://oasis-inn.web.app/bookings/${_id}`, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const remaining = myBookings.filter(singleBooking => singleBooking._id !== _id);
+                setMyBookings(remaining);
+                if (command == 'confirm') {
+                    alert("confirmed")
+                } else if (command == 'delete') {
+                    alert('deleted')
+                }
+            })
+    }
+
+
 
     return (
 
         <tr>
             <th>
-                <TiTick className="cursor-pointer" />
+                <TiTick onClick={() => handleDelete('confirm')} className="cursor-pointer" />
             </th>
             <td>
                 <div className="flex items-center space-x-3">
@@ -61,8 +82,8 @@ const SingleMyBooking = ({ myBooking }) => {
 
                 {
                     remainingDays <= 1 ?
-                        <AiOutlineStop />
-                        : <ImCross onClick={handleCancel} className="cursor-pointer" />
+                        <AiOutlineStop className="tooltip tooltip-right" data-tip="Only couples aged between 18-23 are eligible" />
+                        : <ImCross className="cursor-pointer" />
                 }
             </td>
             <td className="flex flex-col items-center space-y-2 justify-center">
@@ -86,7 +107,7 @@ const SingleMyBooking = ({ myBooking }) => {
                 <Link to={`/roomDetail/${_id}`} className="btn btn-ghost btn-xs">details</Link>
             </td>
             <th>
-                <BsFillTrash3Fill className="cursor-pointer" />
+                <BsFillTrash3Fill onClick={() => handleDelete('delete')} className="cursor-pointer" />
             </th>
         </tr >
     );
