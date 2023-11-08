@@ -27,7 +27,7 @@ const SingleRoom = ({ room }) => {
                     className="mySwiper"
                 >
                     {
-                        imageUrls.map(image => <SwiperSlide
+                        imageUrls?.map(image => <SwiperSlide
                             key={image}
                         ><img className='h-[290px]' src={image} alt="Shoes" />
                         </SwiperSlide>)
@@ -49,8 +49,8 @@ const SingleRoom = ({ room }) => {
                 <div className='flex justify-between items-center'>
                     <p><span className='font-semibold'>${price}</span> night</p>
                     {
-                        !reviews.length > 0 ?
-                            <div className="indicator-item badge rounded-lg badge-secondary">{reviews.length}</div>
+                        !reviews?.length > 0 ?
+                            <div className="indicator-item badge rounded-lg badge-secondary">{reviews?.length}</div>
                             : ""
                     }
                 </div>

@@ -26,8 +26,9 @@ const RoomDetail = () => {
         isBooked = false;
     }
     const today = moment().format("YYYY-MM-DD");
+    let highestCheckOut;
     if (!booking?.length == 0) {
-        let highestCheckOut = booking[0]?.checkOut;
+        highestCheckOut = booking[0]?.checkOut;
         for (let i = 0; i < booking.length; i++) {
 
             if (highestCheckOut < booking[i]?.checkOut) {
@@ -67,7 +68,7 @@ const RoomDetail = () => {
             const bookingInfo = {
                 email,
                 bookingDates,
-                _id,
+                service_id: _id,
                 price,
                 location,
                 description,

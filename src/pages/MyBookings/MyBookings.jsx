@@ -24,11 +24,12 @@ const MyBookings = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Confirm</th>
                             <th>Room</th>
+                            <th>Cancel</th>
                             <th>Booked date</th>
-                            <th>Update date</th>
-                            <th></th>
+                            <th>Details</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>

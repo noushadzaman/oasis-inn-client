@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { logIn } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -13,10 +16,17 @@ const Login = () => {
         console.log(email, password);
         logIn(email, password)
             .then(data => {
-                console.log(data.user);
+                setError('');
+                navigate('/');
+                Swal.fire({
+                    title: 'Login successful.',
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 2000
+                })
             })
             .catch(err => {
-                console.log(err.message);
+                setError(err.message);
             })
     }
     return (
@@ -41,6 +51,7 @@ const Login = () => {
                             <label className="label">
                                 <Link to="/register" className="label-text-alt link link-hover">Register here!</Link >
                             </label>
+                            <p className="text-error">{error}</p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>

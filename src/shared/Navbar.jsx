@@ -2,13 +2,21 @@ import { Link, NavLink } from "react-router-dom";
 import NavbarItems from './NavbarItems';
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from 'sweetalert2';
+
 
 const Navbar = () => {
     const { loading, user, logOut } = useContext(AuthContext);
+    console.log(user)
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Log out successful.",
+                });
+            })
             .catch(() => { })
     }
     return (
@@ -48,24 +56,34 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-end">
+
                     {
-                        user?.email && !loading ?
-                            <div className="dropdown dropdown-left max-h-[40px] m-0 p-0">
-                                <label tabIndex={0} className="m-1">
-                                    <div className="avatar">
-                                        <div className="h-[50px] pt-0 rounded-full">
-                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-                                        </div>
-                                        <h1>Name</h1>
-                                    </div>
-                                </label>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 ">
-                                    <button
-                                        onClick={handleLogOut}>Log out</button>
-                                </ul>
+                        loading ?
+                            <span className="loading loading-spinner loading-lg"></span> :
+                            <div>
+                                {
+                                    user?.email ?
+                                        <div className="dropdown dropdown-end">
+                                            <label tabIndex={0} className="m-1">
+                                                <div className="avatar">
+                                                    <div className="w-12 rounded-full">
+                                                        <img src={user.photoURL} />
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <div tabIndex={0} className="dropdown-content z-[100000] menu p-2 shadow bg-base-100 rounded-box  flex flex-col items-center justify-center py-5 px-3">
+                                                <p className="text-xl text-center font-semibold">{user.displayName}</p>
+                                                <p className="text-center mt-1">{user.email}</p>
+                                                <button
+                                                    onClick={handleLogOut}
+                                                    className="btn btn-primary mt-4">Log out</button>
+                                            </div>
+                                        </div> :
+
+                                        !loading && !user?.email &&
+                                        <Link to="/login" className="py-1 btn bg-[#ccb89b] border-0 rounded-[2px] mr-5 text-white ml-10">Login</Link>
+                                }
                             </div>
-                            :
-                            <Link to="/login" className="py-1 btn bg-[#ccb89b] border-0 rounded-[2px] mr-5 text-white ml-10">Login</Link>
                     }
                 </div>
             </div >

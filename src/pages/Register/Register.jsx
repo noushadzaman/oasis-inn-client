@@ -1,22 +1,37 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from 'sweetalert2';
+
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setPhotoAndName, auth } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        const photo = form.photo.value;
+        const name = form.name.value;
         console.log(email, password);
         createUser(email, password)
-            .then(data => {
-                console.log(data.user);
+            .then(() => {
+                setPhotoAndName(name, photo);
+                setError('');
+                navigate('/');
+                Swal.fire({
+                    title: 'Registration successful.',
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+
             })
             .catch(err => {
-                console.log(err.message);
+                setError(err.message);
             })
     }
     return (
@@ -27,6 +42,18 @@ const Register = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">PhotoURL</span>
+                            </label>
+                            <input name="photo" type="text" placeholder="photoUrl" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input name="name" type="text" placeholder="name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -41,6 +68,7 @@ const Register = () => {
                             <label className="label">
                                 <Link to="/login" className="label-text-alt link link-hover">login here!</Link >
                             </label>
+                            <p className="text-error">{error}</p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>

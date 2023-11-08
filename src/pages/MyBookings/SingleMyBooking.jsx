@@ -1,15 +1,48 @@
 import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import { useState } from "react";
+import formatDate from "../../utilities/DateFormater";
+import { BsFillTrash3Fill } from "react-icons/bs";
+import { TiTick } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
+import { AiOutlineStop } from "react-icons/ai";
+import moment from 'moment';
+import daysUntil from "../../utilities/DaysRemaining";
 
 const SingleMyBooking = ({ myBooking }) => {
     const { _id, email, bookingDates, price, description, location, image } = myBooking;
-    console.log(myBooking)
+    const [startDate, setStartDate] = useState(new Date(bookingDates.checkIn));
+    const [endDate, setEndDate] = useState(new Date(bookingDates.checkOut));
+    const [deleteBooking, setDeleteBooking] = useState(false);
+
+
+    const handleUpdateBooking = (id) => {
+        const checkIn = formatDate(startDate);
+        const checkOut = formatDate(endDate);
+        console.log(checkIn, checkOut);
+        const newBookingDates = {
+            checkIn: checkIn,
+            checkOut: checkOut
+        }
+        fetch(`http://localhost:5000/bookings/${id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newBookingDates)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
+
     return (
 
         <tr>
             <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
+                <TiTick className="cursor-pointer" />
             </th>
             <td>
                 <div className="flex items-center space-x-3">
@@ -25,21 +58,35 @@ const SingleMyBooking = ({ myBooking }) => {
                 </div>
             </td>
             <td>
-                <div className="text-[19px] space-y-3">
-                    <p>
-                        From: {bookingDates.checkIn}
-                    </p>
-                    <p>
-                        To: {bookingDates.checkOut}
-                    </p>
+
+                {
+                    remainingDays <= 1 ?
+                        <AiOutlineStop />
+                        : <ImCross onClick={handleCancel} className="cursor-pointer" />
+                }
+            </td>
+            <td className="flex flex-col items-center space-y-2 justify-center">
+                <div>
+                    <DatePicker
+                        className="border"
+                        showIcon
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                    />
+                    <DatePicker
+                        className="border"
+                        showIcon
+                        selected={endDate}
+                        onChange={(date) => setEndDate(date)}
+                    />
                 </div>
+                <button className="btn btn-sm w-36" onClick={() => handleUpdateBooking(_id)}>Update</button>
             </td>
             <td>
-                <input type="date" />
-                <input className="btn btn-sm" type="submit" value="Update" />
+                <Link to={`/roomDetail/${_id}`} className="btn btn-ghost btn-xs">details</Link>
             </td>
             <th>
-                <Link to={`/roomDetail/${_id}`} className="btn btn-ghost btn-xs">details</Link>
+                <BsFillTrash3Fill className="cursor-pointer" />
             </th>
         </tr >
     );
