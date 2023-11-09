@@ -13,88 +13,69 @@ import ReviewContainer from "./ReviewContainer";
 
 const RoomDetail = () => {
     const roomDetail = useLoaderData();
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
     const { user } = useContext(AuthContext);
     const email = user?.email;
     let { _id, location, title, description, price, room_size, availability, featured, available_seats, imageUrls, special_offers, booking, reviews } = roomDetail;
+    console.log(booking)
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //TODO booking 
-    let isBooked = true;
+    let isBooked;
     const today = moment().format("YYYY-MM-DD");
-    let highestCheckOut;
-    if (!booking?.length == 0) {
-        highestCheckOut = booking[0]?.checkOut;
-        for (let i = 0; i < booking.length; i++) {
-            if (highestCheckOut < booking[i]?.checkOut) {
-                highestCheckOut = booking[i]?.checkOut;
-            }
-        }
-        if (today <= highestCheckOut) {
+    if (booking.length <= 0) {
+        isBooked = false;
+    }
+    else {
+        const booked = booking.find(singleBooking => singleBooking == today);
+        console.log(booked)
+        if (booked) {
             isBooked = true;
         }
         else {
-            isBooked = false
+            isBooked = false;
         }
     }
-    else {
-        isBooked = false;
-    }
+    console.log(isBooked)
+
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //TODO booking 
     const datePicker = (e) => {
         e.preventDefault();
-        const checkIn = formatDate(startDate);
-        const checkOut = formatDate(endDate);
-        if (checkIn <= today || checkOut <= today) {
-            alert('cant book');
-            return;
+        const bookedDate = formatDate(date);
+        booking = [...booking, bookedDate];
+        const bookingInfo = {
+            email,
+            bookedDate,
+            service_id: _id,
+            price,
+            location,
+            description,
+            image: imageUrls[0]
         }
-        if (isBooked) {
-            return alert("it is booked :)");
-        }
-        const bookingDates = {
-            checkIn: checkIn,
-            checkOut: checkOut
-        }
-        booking = [...booking, bookingDates];
+        fetch('http://localhost:5000/bookings', {
+            method: "POST",
+            headers: {
+                "content-type": "Application/json"
+            },
+            body: JSON.stringify(bookingInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        fetch(`http://localhost:5000/roomDetail/${_id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "Application/json"
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
 
-        if (!isBooked) {
-            const bookingInfo = {
-                email,
-                bookingDates,
-                service_id: _id,
-                price,
-                location,
-                description,
-                image: imageUrls[0]
-            }
-            fetch('https://oasis-inn.web.app/bookings', {
-                method: "POST",
-                headers: {
-                    "content-type": "Application/json"
-                },
-                body: JSON.stringify(bookingInfo)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
-            fetch(`https://oasis-inn.web.app/roomDetail/${_id}`, {
-                method: "PATCH",
-                headers: {
-                    "content-type": "Application/json"
-                },
-                body: JSON.stringify(booking)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-        } else {
-            alert('booked')
-        }
 
     }
     //TODO booking 
@@ -141,35 +122,39 @@ const RoomDetail = () => {
                                 <h2 className="card-title mb-5">Reviews: {reviews.length}</h2>
                             </div>
                             {
-                                isBooked && <p>Booking will be available after: {highestCheckOut}</p>
+                                // isBooked && <p>Booking will be available after: {highestCheckOut}</p>
                             }
                             <h3>From</h3>
                             <DatePicker
                                 showIcon
-                                selected={startDate}
-                                onChange={(date) => setStartDate(date)}
+                                selected={date}
+                                onChange={(date) => setDate(date)}
                             />
-                            <h3>To</h3>
-                            <DatePicker
-                                showIcon
-                                selected={endDate}
-                                onChange={(date) => setEndDate(date)}
-                            />
-                            <p className="text-lg">Choose a date you want to book at <span>{location}</span></p>
+                            {
+                                !isBooked ?
+                                    <p className="text-lg">Choose a date you want to book at <span>{location}</span></p>
+                                    :
+                                    <p className="text-lg">SORRY!!!!!!! The Room is booked!<span></span></p>
+                            }
                         </div>
-                        <button
-                            onClick={datePicker}
-                            className="btn mb-5 mx-3 md:mx-8">Book now!</button>
+                        {
+                            !isBooked ?
+                                <button
+                                    onClick={datePicker}
+                                    className="btn mb-5 mx-3 md:mx-8">Book now!</button>
+                                : <button
+                                    className="btn mb-5 mx-3 md:mx-8" disabled>Booked</button>
+                        }
                     </div>
                 </div>
             </div>
-            <ReviewRoom
+            {/* <ReviewRoom
                 email={email}
                 _id={_id}
             ></ReviewRoom>
             <ReviewContainer
                 _id={_id}
-            ></ReviewContainer>
+            ></ReviewContainer> */}
         </div>
     );
 };

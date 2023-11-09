@@ -13,7 +13,7 @@ const FeaturedRooms = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://oasis-inn.web.app/rooms')
+        fetch('http://localhost:5000/rooms')
             .then(res => res.json())
             .then(data => setAllRooms(data))
     }, []);

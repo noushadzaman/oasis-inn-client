@@ -24,7 +24,7 @@ const SingleMyBooking = ({ myBooking, myBookings, setMyBookings }) => {
             checkIn: checkIn,
             checkOut: checkOut
         }
-        fetch(`https://oasis-inn.web.app/bookings/${id}`, {
+        fetch(`http://localhost:5000/bookings/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -41,7 +41,7 @@ const SingleMyBooking = ({ myBooking, myBookings, setMyBookings }) => {
     console.log(remainingDays);
 
     const handleDelete = (command) => {
-        fetch(`https://oasis-inn.web.app/bookings/${_id}`, {
+        fetch(`http://localhost:5000/bookings/${_id}`, {
             method: "DELETE",
         })
             .then(res => res.json())

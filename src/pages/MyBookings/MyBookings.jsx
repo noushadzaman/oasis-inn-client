@@ -1,19 +1,25 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import SingleMyBooking from "./SingleMyBooking";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyBookings = () => {
     const [myBookings, setMyBookings] = useState([]);
     const { user } = useContext(AuthContext);
     const email = user?.email;
+    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        fetch(`https://oasis-inn.web.app/bookings?email=${email}`)
+        fetch(`http://localhost:5000/bookings?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setMyBookings(data);
             })
     }, [email]);
+    // useEffect(() => {
+    //     axiosSecure.get(`/bookings?email=${user?.email}`)
+    //         .then(res => setMyBookings(res.data))
+    // }, [email, axiosSecure]);
 
     console.log(myBookings)
 
