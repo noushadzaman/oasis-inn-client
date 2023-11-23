@@ -1,304 +1,249 @@
 [
     {
-        "location": "Nantes, Pays de la Loire, France",
-        "title": "Centre place Graslin - Private room La Cambronne",
-        "description": "Enjoy an elegant 20 m2 private room in a renovated 160 m2 apartment in the heart of Nantes city center in the very popular 'Graslin' district. The charm of the old renovated: ceiling height of 3.60 m, period parquet, black marble fireplace, comfortable bathroom.",
-        "price": 77,
-        "room_size": "600 sq. ft.",
+        "location": "Castle in Osowa Sień, Poland",
+        "title": "Rent The Palace at Osowa Sien Exclusively",
+        "description": "Discover The Palace at Osowa Sien, your intimate getaway for up to 16 guests via AirBnB (40 max with extra fees). Enjoy the castle's Finnish sauna, 70 sqm wellness studio, 65 sqm kitchen, dance floor, fireplace salon, and 5-hectare park. Note: AirBnB is for property rental, not wedding planning. For nuptial inquiries, please contact us directly.",
+        "price": 2721,
+        "room_size": "1200 sq. ft.",
         "availability": true,
-        "featured": false,
-        "available_seats": 8,
+        "available_seats": 9,
         "imageUrls": [
-            "https://i.ibb.co/Lt0nBWF/room1img1.webp",
-            "https://i.ibb.co/mJDz1Bq/room1img2.webp",
-            "https://i.ibb.co/M6zpxn2/room1img3.webp",
-            "https://i.ibb.co/kHfyNSz/room1img4.webp",
-            "https://i.ibb.co/KzwZjX0/room1img5.webp"
+            "https://i.ibb.co/3rhKYVX/347f2682-6824-410c-82b7-7b04489b8a94.webp",
+            "https://i.ibb.co/k5vW8Yd/3c861fe4-88f8-428e-910c-9141c10e7971.webp",
+            "https://i.ibb.co/b5X4xC3/bf70d100-c0b3-4764-9dff-5f4ecc13fc1d.webp",
+            "https://i.ibb.co/SsGC8fh/0b13df1e-f824-4648-93f2-cd8990c63da7.webp",
+            "https://i.ibb.co/3zQtK1W/d96c9f05-348d-4f2e-8c91-92afbdb2c4ad.webp"
+        ],
+        "special_offers": [
+            "Park view",
+            "Garden view",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Private room in castle in Nuthe-Urstromtal, Germany",
+        "title": "Stülpe Castle - Schlossherr von Stülpe",
+        "description": "This 36.6 sqm triple room has a comfortable double bed (1.6mx2.0m), a single bed (1.0mx2.0m), a large TV, a secretary, a farm closet and a private shower room. Bicycles are available free of charge, use of the castle terrace and there castle parks with sun loungers, guided tour of the castle complex with the lord of the castle, water bottles in the rooms",
+        "price": 193,
+        "room_size": "1100 sq. ft.",
+        "availability": true,
+        "available_seats": 7,
+        "imageUrls": [
+            "https://i.ibb.co/gjF1yWN/1e6f26f0-8354-4da9-91a5-43bb16954e08.webp",
+            "https://i.ibb.co/hR459p1/84b6fff0-6226-4023-b3a7-74136c01b566.webp",
+            "https://i.ibb.co/whN4nbp/0348717f-1dfe-463d-b360-3cbeec57164e.webp",
+            "https://i.ibb.co/mDcYKVX/120c08f6-4d86-4df1-b0e6-121599db844b.webp",
+            "https://i.ibb.co/8ctZPLM/2210b3f9-c6d5-432c-858a-7a2f6f01612b.webp"
+        ],
+        "special_offers": [
+            "Wifi",
+            "Free parking on premises",
+            "TV",
+            "Dryer"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Entire rental unit in Wandlitz, Germany",
+        "title": "Apartment in Lanke Castle",
+        "description": "In Lanke Castle, we rent an approx. 100 square meter 3-room apartment in the attic. The apartment is modern and furnished with design furniture. It has two bedrooms (1 double bed, two single beds), an open kitchen (small dishwasher and fridge, stovetop) in the living room and a bathroom with shower.",
+        "price": 131,
+        "room_size": "1500 sq. ft.",
+        "availability": true,
+        "available_seats": 6,
+        "imageUrls": [
+            "https://i.ibb.co/6Y58v1k/ada6ccf3-5970-42e2-bdd1-5c04b5e576e4.webp",
+            "https://i.ibb.co/QnpQy7J/1a759781-31e2-4ffe-b14b-99c9cbea5fd7.webp",
+            "https://i.ibb.co/sVSp1rv/68dea758-ab8b-4a1a-85e6-ec22c912e5c0.webp",
+            "https://i.ibb.co/4ZC3KGZ/590f52a6-ae76-461c-a7fc-25671ad9d3c2.webp",
+            "https://i.ibb.co/mJwSLJT/447644fc-24a8-49e6-a85a-91df2bfb3260.webp"
+        ],
+        "special_offers": [
+            "Canal view",
+            "Garden view",
+            "Public or shared beach access",
+            "Kitchen",
+            "Wifi"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Room in Udaipur, India",
+        "title": "Burj Room@Castle Oodeypore",
+        "description": "The Burj room is a curated selection from our rooms at Castle Oodeypore, we offer this Burj room that is in the shape of an octagon, it draws inspiration from the ancient architecture of the forts and palaces of Rajasthan.",
+        "price": 106,
+        "room_size": "1400 sq. ft.",
+        "availability": true,
+        "available_seats": 11,
+        "imageUrls": [
+            "https://i.ibb.co/Lv0xgGB/34d1b65b-1399-44cb-a3f4-772a6bd2da01.webp",
+            "https://i.ibb.co/bQCLVQP/ec8ea657-d2e0-4552-b0e8-f3cae89aa1c3.webp",
+            "https://i.ibb.co/HqQFR2n/22327baa-330d-4619-bba7-c378fbc3eca8.webp",
+            "https://i.ibb.co/yXcpXHY/a88b5239-d645-489f-ac4f-8aa237774a0e.webp",
+            "https://i.ibb.co/2t01gxv/3bac3e08-340d-4d19-bd5c-b2134a95f723.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "City skyline view",
+            "Courtyard view",
+            "Kitchen",
+            "Wifi"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Room in Udaipur, India",
+        "title": "6 Rooms @ Castle Oodeypore - A Royal Homestay",
+        "description": "Castle Oodeypore is a heritage architecture building with modern, luxurious & spacious interiors. It has majestic rooms with opulent restrooms. Nestled in nature surrounded by Aravali hills on three sides has a clear view of Sajjan Garh from all the room and city palace from the rooftop. free wifi & parking are availab&le. It is ideal for hiking, trekking & cycling in the vicinity",
+        "price": 648,
+        "room_size": " sq. ft.",
+        "availability": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/dk2pXdq/a25674e2-47c9-4f5a-b0d9-865814157a4f.webp",
+            "https://i.ibb.co/dQGh4F5/dc3fb0d8-b6a4-44b8-b548-f01a40eb71e2.webp",
+            "https://i.ibb.co/xmpdBRH/acaaa1e1-6dee-4ee5-9bfb-a3088a46d75a.webp",
+            "https://i.ibb.co/51j6BsV/45e13e3d-e522-4ce7-9869-89faab181503.webp",
+            "https://i.ibb.co/1Lrfmtd/901f7f5c-6a69-4940-b5c1-4e814e8be354.webp"
+        ],
+        "special_offers": [
+            "City skyline view",
+            "Garden view",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Room in Valencia, Spain",
+        "title": "Enjoy historic Valencia and close to the beach.",
+        "description": "Nice and spacious room in the heart of Valencia, with double bed and a balcony. Silent because there is no traffic. Surrounded by all the landmarks , museums , cathedral , leisure, and close to the beach where you can go by bike, bus , tram or car if your means of transportation.I would love to receive people wanting to enjoy my city and help in what I can .",
+        "price": 42,
+        "room_size": " sq. ft.",
+        "availability": true,
+        "available_seats": 13,
+        "imageUrls": [
+            "https://i.ibb.co/hfNHzSN/46c0c87f-d9bc-443c-9b64-24d9e594b54c.webp",
+            "https://i.ibb.co/p1HHC0f/2f6537e4-cd4f-44e1-8acb-6bf77011b0e5.webp",
+            "https://i.ibb.co/jzN3nKP/7fa4060d-60c1-44b0-921b-6958e7b200f1.webp",
+            "https://i.ibb.co/ZLqMHMb/90d22704-7f1a-44ad-924a-ecbdbb666db0.webp",
+            "https://i.ibb.co/JFGvwWC/b7c698e2-6d20-4d2a-a933-4c3f9e36eac4.webp"
+        ],
+        "special_offers": [
+            "Lock on bedroom door",
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "Washer"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Room in Torino, Italy",
+        "title": "Noble room into the historical Torino",
+        "description": "we are in a building of from the 1800's, in a quiet street but in the heart of historic Turin. to 10 min. the biggest square in Europe Piazza Vittorio where ther's the night life. Convenient to all services. In the district you can find every day a local market with fresh produce, but there are also different supermarket. The small electric bus Star1 near the house will lead you under the Mole Antonelliana with the Cinema museum, also Egyptian Museum or even the mayestic Piazza Castello.",
+        "price": 44,
+        "room_size": " sq. ft.",
+        "availability": true,
+        "available_seats": 5,
+        "imageUrls": [
+            "https://i.ibb.co/mXV9Dw7/64bab0bc-cbee-40dc-8402-085fd54b2e0c.webp",
+            "https://i.ibb.co/5nn3tRP/26c03651-2618-4286-98e3-5c82691bb5bb.webp",
+            "https://i.ibb.co/tHGM2wV/80c053cd-cce6-4fea-ba6f-b27be25d7771.webp",
+            "https://i.ibb.co/qL8jhnG/82d996fb-d7c4-46a8-a713-febd281cd69f.webp",
+            "https://i.ibb.co/31sZKNH/b0f5f933-1f0b-4f89-b6e6-7b0c2f4dfacd.webp"
         ],
         "special_offers": [
             "Lock on bedroom door",
             "City skyline view",
             "Wifi",
             "Dedicated workspace",
-            "40",
-            "HDTV with Netflix, Disney+"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Lyon, Auvergne-Rhône-Alpes, France",
-        "title": "Private garden, quiet, easy parking",
-        "description": "This room with personal bathrooms, in an apartment renovate with quality materials,  to welcome you in the heart of Lyon. On the mythical Croix Rousse hill, nice surprises to discover await you. Quiet, charming, in a green setting: a real luxury.",
-        "price": 68,
-        "room_size": "400 sq. ft.",
-        "availability": true,
-        "featured": false,
-        "available_seats": 6,
-        "imageUrls": [
-            "https://i.ibb.co/gwRrgxn/room2img1.webp",
-            "https://i.ibb.co/sQD8Lqj/room2img2.webp",
-            "https://i.ibb.co/YBVkjV4/room2img3.webp",
-            "https://i.ibb.co/ftvC4Bd/room2img4.webp"
-        ],
-        "special_offers": [
-            "Lock on bedroom door",
-            "Kitchen",
-            "Wifi - 33 Mbps",
-            "Free street parking",
-            "Free washer - In unit"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Milano, Lombardia, Italy",
-        "title": "Double room in lovely apartment",
-        "description": "Hi I'm Valentina! I'm 31 and I'm an interior designer.I rent a room with a double bed in my cute apartment. I love sharing experiences, getting to know new people, and giving you helpful tips for your stay.The apartment is cozy, with everything you need. You can use all common areas as long as it is maintained with respect to the things of others. :) Please let me know if you have any questions!",
-        "price": 86,
-        "room_size": "450 sq. ft.",
-        "availability": true,
-        "featured": false,
-        "available_seats": 9,
-        "imageUrls": [
-            "https://i.ibb.co/8Bspg4B/room3img1.webp",
-            "https://i.ibb.co/QK9xqxT/room3img2.webp",
-            "https://i.ibb.co/VB0qr70/room3img3.webp",
-            "https://i.ibb.co/kHfyNSz/room1img4.webp",
-            "https://i.ibb.co/LR7sbJN/room3img5.webp"
-        ],
-        "special_offers": [
-            "Lock on bedroom door",
-            "Courtyard view",
-            "Kitchen",
-            "Wifi",
-            "Free street parking"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Seddon, Victoria, Australia",
-        "title": "Comfy room in modern apartment",
-        "description": "A modern, comfortable room in the charming and peaceful neighbourhood of Seddon, just over fifteen minutes from the centre of Melbourne.",
-        "price": 62,
-        "room_size": "480 sq. ft.",
-        "availability": true,
-        "featured": false,
-        "available_seats": 5,
-        "imageUrls": [
-            "https://i.ibb.co/8g46nSB/room4img1.webp",
-            "https://i.ibb.co/z8Tcyz0/room4img2.webp",
-            "https://i.ibb.co/0YYNLV9/room4img3.webp",
-            "https://i.ibb.co/tPXyXC0/room4img4.webp",
-            "https://i.ibb.co/1fkxDcV/room4img5.webp"
-        ],
-        "special_offers": [
-            "Lock on bedroom door",
-            "Kitchen",
-            "Wifi",
-            "Dedicated workspace",
-            "Free parking on premises"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Dubai, United Arab Emirates",
-        "title": "Silkhaus Modern 1 BDR | Unique Design | Downtown",
-        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
-        "price": 178,
-        "room_size": "780 sq. ft.",
-        "availability": true,
-        "featured": true,
-        "available_seats": 8,
-        "imageUrls": [
-            "https://i.ibb.co/NFDHDzt/room5img1.webp",
-            "https://i.ibb.co/TWK58Pg/room5img2.webp",
-            "https://i.ibb.co/9vg6fLb/room5img3.webp",
-            "https://i.ibb.co/Dz6F8NR/room5img4.webp",
-            "https://i.ibb.co/LZB4GjT/room5img5.webp"
-        ],
-        "special_offers": [
-            "Kitchen",
-            "Lock on bedroom door",
-            "Wifi",
-            "Dedicated workspace",
-            "Free parking on premises"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Balmain, New South Wales, Australia",
-        "title": "Quality Furnishing & Expansive Harbour Views",
-        "description": "Discover the best of Dubai, with this one-bedroom DIFC apartment with balcony views over the city. It’ll be easy to simply show up and start living in this contemporary Blueground furnished apartment with its fully-equipped kitchen, pretty living room, and our dedicated, on-the-ground support",
-        "price": 234,
-        "room_size": "550 sq. ft.",
-        "availability": true,
-        "featured": true,
-        "available_seats": 8,
-        "imageUrls": [
-            "https://i.ibb.co/fSWsvpp/room7img1.webp",
-            "https://i.ibb.co/pzpGsqT/room7img2.webp",
-            "https://i.ibb.co/L6r3qMZ/room7img3.webp",
-            "https://i.ibb.co/qMhSBJp/room7img4.webp",
-            "https://i.ibb.co/m5TjQDZ/room7img5.webp"
-        ],
-        "special_offers": [
-            "Valley view",
-            "Harbor view",
-            "Kitchen",
-            "Wifi",
-            "Free parking on premises"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Venice, Veneto, Italy",
-        "title": "Maison des Artistes",
-        "description": "The Grand Canal glints below the terraces of this reimagined palazzo. The building features a shared reading area tucked under beams and a rooftop terrace with a bar. Local designer Umberto Branchini wrapped each of the 4 apartments in jewel-toned stucco, sleek millwork, and terrazzo floors. The San Polo location is close to churches and eateries, and a 20-minute walk from the Piazza San Marco.",
-        "price": 2585,
-        "room_size": "650 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
-        "imageUrls": [
-            "https://i.ibb.co/Tr8XqJ7/room8img1.webp",
-            "https://i.ibb.co/HdhsJZf/room8img2.webp",
-            "https://i.ibb.co/hD6Pk5P/room8img3.webp",
-            "https://i.ibb.co/RSgkQ7n/room8img4.webp"
-        ],
-        "special_offers": [
-            "Canal view",
-            "Property manager",
-            "Kitchen",
-            "Wifi",
             "TV"
         ],
         "booking": [],
         "reviews": []
     },
     {
-        "location": "Dubai, United Arab Emirates",
-        "title": "Spacious Apartment With Panoramic Skyline Views",
-        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
-        "price": 3755,
-        "room_size": "650 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
+        "location": "Luxury room in Ópera",
+        "title": "Room in Madrid, Spain",
+        "description": "Newly renovated luxury apartment, taking care of all the details. It is located in the heart of Madrid, next to the Plaza de Ópera and the Royal Palace (metro lines 2 and 5).The room is bright and interior, spacious and silent. The bathroois spacious and very comfortable.The apartment consists of two bedrooms and two bathrooms. One of the bedrooms and bathroom are for the use of the hosts, and the other bedroom and bathroom, which you can see in the ad, are private for the guest or guests.",
+        "price": 86,
+        "room_size": " sq. ft.",
+        "availability": true,
+        "available_seats": 12,
         "imageUrls": [
-            "https://i.ibb.co/xfhn6Jg/room6img1.webp",
-            "https://i.ibb.co/cFzx2FK/room6img2.webp",
-            "https://i.ibb.co/TrVL5pd/room6img3.webp",
-            "https://i.ibb.co/BGBTKQw/room6img4.webp",
-            "https://i.ibb.co/0XQvz4S/room6img5.webp"
-        ],
-        "special_offers": [
-            "Valley view",
-            "Harbor view",
-            "Kitchen",
-            "Wifi",
-            "Free parking on premises"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Dubai, United Arab Emirates",
-        "title": "Apartment With tremendous Skyline Views",
-        "description": "Welcome to Silkhaus! This large and modern one bedroom is located at the edge of Downtown and Business Bay. It offers exclusive access to the building's resort-style amenities and is perfect for couples, business travelers, and even solo tourists. Enjoy privacy, complimentary WiFi, close proximity to popular attractions, and experience Dubai like a local.",
-        "price": 3755,
-        "room_size": "650 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
-        "imageUrls": [
-            "https://i.ibb.co/7N221gG/room9img1.webp",
-            "https://i.ibb.co/PFxWy1T/room9img2.webp",
-            "https://i.ibb.co/zmvfJjr/room9img3.webp"
-        ],
-        "special_offers": [
-            "Valley view",
-            "Harbor view",
-            "Kitchen",
-            "Wifi",
-            "Free parking on premises"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Cape Town, Western Cape, South Africa",
-        "title": "UPS, Sea Views & Personalised Services",
-        "description": "Three immaculate levels are yours to enjoy at this elegant Camps Bay home. Natural light oozes inside, igniting the sophisticated décor. Glass railings on the balcony allow unobstructed views of the Atlantic Ocean. Hike winding trails at Table Mountain, spend an afternoon at the beach, or settle in for a taste of local cuisine at a waterfront restaurant. After dark, the pool offers a starlit swim.",
-        "price": 1170,
-        "room_size": "550 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
-        "imageUrls": [
-            "https://i.ibb.co/4mQwRt0/room10img1.webp",
-            "https://i.ibb.co/845bDmr/room10img2.webp",
-            "https://i.ibb.co/4sVYwxD/room9img3.webp"
-        ],
-        "special_offers": [
-            "Chef service - 1 meal per day",
-            "Airport transfer",
-            "Driver",
-            "Childcare",
-            "Cook service - 3 meals per day",
-            "Waitstaff"
-        ],
-        "booking": [],
-        "reviews": []
-    },
-    {
-        "location": "Bangkok, Thailand",
-        "title": "Siri Sala Private Thai Villa",
-        "description": "Thai homes were the inspiration for this villa. Ponds, gardens & saltwater pool create a natural setting that pay tribute to traditional waterside homes on stilts. The 3 modern 'ruens' or thai houses sharing a common courtyard are complemented by a reconstructed wooden heritage house, and all feature original details like murals and reclaimed teak furniture. The best of Bangkok is reachable by car or boat through the property's private pier. Featured in major travel & design publications.",
-        "price": 5266,
-        "room_size": "950 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
-        "imageUrls": [
-            "https://i.ibb.co/YRhDZNH/room11img1.webp",
-            "https://i.ibb.co/Jp0Vby2/room11img2.webp",
-            "https://i.ibb.co/ygsD9g0/room11img3.webp"
+            "https://i.ibb.co/gJGqw6f/b2ba04f5-8886-46bc-b6f0-15a50c418720.webp",
+            "https://i.ibb.co/d5yZsMv/07ee427e-6ea0-4cc6-8652-ee90df634d21.webp",
+            "https://i.ibb.co/CwcKxj7/4e30100e-08e2-4ce3-8e1b-a9dc7d13ab22.webp",
+            "https://i.ibb.co/J7JGp4G/d334c373-bf21-4fce-aff6-0dc085f7bd28.webp",
+            "https://i.ibb.co/23Mjc0q/e43a96da-e06f-475c-ab38-38dc779cf355.webp"
         ],
         "special_offers": [
             "Garden view",
-            "River view",
-            "Waterfront",
-            "Roundtrip airport transfer",
-            "Chef"
+            "Kitchen",
+            "Wifi",
+            "Dedicated workspace",
+            "85 HDTV with standard cable, Amazon Prime Video"
         ],
         "booking": [],
         "reviews": []
     },
     {
-        "location": "Paris, Île-de-France, France",
-        "title": "Arty & Luxurious flat at Opéra",
-        "description": "For a truly Parisian experience, this artistic villa shows off the depth of design for which France is famous. Overlooking a European-style courtyard, this bright apartment enjoys frescoed ceilings, parquet flooring, and an eclectic mix of art and designer furnishings throughout. In the neighbourhood, you will find beautiful parks, bakeries, restaurants, and high-end fashion houses.",
-        "price": 1581,
-        "room_size": "650 sq. ft.",
-        "availability": false,
-        "featured": false,
-        "available_seats": 0,
+        "location": "Room in London, United Kingdom",
+        "title": "Comfy single room at the heart of Streatham",
+        "description": "My place is close to Streatham Hill Station, Numerous buses to London, Bars, Restaurants.... You'll love my place because of Comfy bed, lovely large kitchen and garden.. My place is good for solo adventurers.",
+        "price": 50,
+        "room_size": " sq. ft.",
+        "availability": true,
+        "available_seats": 11,
         "imageUrls": [
-            "https://i.ibb.co/42czWjX/room12img1.webp",
-            "https://i.ibb.co/whYx6Qx/room12img2.webp",
-            "https://i.ibb.co/HCB91k8/room12img3.webp"
+            "https://i.ibb.co/3YDtMCY/3a0edcbf-4148-4939-bac6-2cf92d21d80c.webp",
+            "https://i.ibb.co/RHGybss/744dff1e-61e5-4b6a-9054-df8b5c317469.webp",
+            "https://i.ibb.co/BtSsyzN/5c81cbc6-d712-4087-8d4a-2e5cbb1f1f11.webp",
+            "https://i.ibb.co/DfGG4Rs/bd68e087-6372-4b4d-ad7d-7738da5777c4.webp",
+            "https://i.ibb.co/tX7LTs7/f31ca77b-dec5-473b-9ffb-a0a7368a05f3.webp"
         ],
         "special_offers": [
+            "Lock on bedroom door",
+            "Garden view",
+            "Kitchen",
+            "Wifi - 35 Mbps",
+            "Dedicated workspace"
+        ],
+        "booking": [],
+        "reviews": []
+    },
+    {
+        "location": "Room in Frankston South, Australia",
+        "title": "Resort style luxury on the Mornington Peninsula!",
+        "description": "Escape to this resort style home with private bedroom and bathroom, pool access, table tennis, pool table, outdoor dining .. The features are endless.Positioned on the Mornington Peninsula, this luxurious home is the perfect home base to explore all that the peninsula is famous for, or simply for a relaxing weekend getaway.",
+        "price": 84,
+        "room_size": " sq. ft.",
+        "availability": false,
+        "available_seats": 0,
+        "imageUrls": [
+            "https://i.ibb.co/Jd2pw1m/d89957f7-0735-418f-b717-d99cf5fbd69a.webp",
+            "https://i.ibb.co/v3Tc3b6/751cae59-bfa0-46bc-bb75-bbeecbfefd04.webp",
+            "https://i.ibb.co/SrCBn0C/caa912e2-038e-46e3-9ed9-62ca998c6b0e.webp",
+            "https://i.ibb.co/5cvsXNY/d4f7cc7d-71be-474a-95c5-cd229908921a.webp",
+            "https://i.ibb.co/CWhsD7W/d9bf6e45-7a6c-44ab-8585-39d3ceb477fb.webp"
+        ],
+        "special_offers": [
+            "Public or shared beach access",
             "Kitchen",
             "Wifi",
             "Dedicated workspace",
-            "TV",
-            "Washer"
+            "Free parking on premises"
         ],
         "booking": [],
         "reviews": []

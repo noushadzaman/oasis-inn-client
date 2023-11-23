@@ -15,6 +15,7 @@ const SingleRoom = ({ room }) => {
             onClick={() => navigate(`/roomDetail/${_id}`)}
             className="card w-96 justify-self-center cursor-pointer">
             <figure className='rounded-xl'>
+
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}
@@ -27,9 +28,9 @@ const SingleRoom = ({ room }) => {
                     className="mySwiper"
                 >
                     {
-                        imageUrls?.map(image => <SwiperSlide
-                            key={image}
-                        ><img className='h-[290px]' src={image} alt="Shoes" />
+                        imageUrls?.map((image, index) => <SwiperSlide
+                            key={index}
+                        ><img className='h-[290px] w-[100%]' src={image} alt="Shoes" />
                         </SwiperSlide>)
                     }
                 </Swiper>

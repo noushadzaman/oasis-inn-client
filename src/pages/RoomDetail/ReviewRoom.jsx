@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from '../../provider/AuthProvider';
 import moment from 'moment';
 import { json } from 'react-router-dom';
+import useAxios from '../../hooks/useAxios';
+import { useQuery } from '@tanstack/react-query';
 
 const myStyles = {
     itemShapes: RoundedStar,
@@ -15,24 +17,31 @@ const ReviewRoom = ({ email, _id }) => {
     const { user } = useContext(AuthContext);
     const name = user?.displayName;
     const [myBookings, setMyBookings] = useState([]);
-    const [rating, setRating] = useState(0);
-    // TODO check if userBooked ?
-    useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMyBookings(data);
-            })
-    }, [email]);
+    const [rating, setRating] = useState(5);
+    const axios = useAxios();
+
+    const { data: bookings, isLoading, isError } = useQuery({
+        queryKey: ['bookings'],
+        queryFn: () => {
+            return axios.get(`/bookings?email=${email}`)
+        }
+    })
+    console.log(bookings)
     let doesExistOnBooking;
-    const booked = myBookings.find(myBooking => myBooking._id == _id);
+    const booked = bookings?.data?.find(myBooking => myBooking.service_id == _id);
     if (booked) {
         doesExistOnBooking = true;
     }
-    // TODO check if userBooked ?
+    else {
+        doesExistOnBooking = false;
+    }
     const date = moment().format('D MMMM YYYY');
 
+    console.log(rating)
     const handleReview = (e) => {
+        if (!doesExistOnBooking) {
+            return alert('you have to book first to review a room')
+        }
         e.preventDefault();
         const comment = e.target.comment.value;
         const reviewInfo = {
@@ -42,8 +51,7 @@ const ReviewRoom = ({ email, _id }) => {
             comment,
             date
         }
-
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://oasis-inn-server.vercel.app/reviews`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

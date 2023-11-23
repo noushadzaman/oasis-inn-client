@@ -1,49 +1,50 @@
-import { useEffect, useState } from "react";
 import SingleRoom from "./SingleRoom";
-
+import { useQuery } from "@tanstack/react-query";
+import useAxios from "../../hooks/useAxios";
+import { useState } from "react";
 const Rooms = () => {
-    const [allRooms, setAllRooms] = useState([]);
-    const [selectedValue, setSelectedValue] = useState('');
+    const [price, setPrice] = useState('');
+    const axios = useAxios();
 
-    useEffect(() => {
-        fetch('http://localhost:5000/rooms')
-            .then(res => res.json())
-            .then(data => {
-                setAllRooms(data);
-            })
-    }, []); 
-
-    const handleSelectChange = (event) => {
-        setSelectedValue(event.target.value);
-    };
-
-    useEffect(() => {
-        if (selectedValue === 'option1') {
-            const sorted = [...allRooms].sort((a, b) => parseInt(b.price) - parseInt(a.price));
-            setAllRooms(sorted);
-        } else if (selectedValue === 'option2') {
-            const sorted = [...allRooms].sort((a, b) => parseInt(a.price) - parseInt(b.price));
-            setAllRooms(sorted);
+    const { data: allRooms, isLoading, isError } = useQuery({
+        queryKey: ['room', price],
+        queryFn: () => {
+            return axios.get(`/rooms?sortField=price&sortOrder=${price}`);
         }
-    }, [selectedValue]); 
+    })
+
+    if (isLoading) {
+        return <div className="w-[50px] mx-auto mt-[170px]">
+            <div className="loading loading-spinner w-[100px]"></div>
+        </div>
+    }
+
+    if (isError) {
+        return <span>Error brooo:/</span>
+    }
 
     return (
-        <div>
-            <div className="flex gap-5">
-                <select className="select select-secondary w-full max-w-xs" onChange={handleSelectChange}>
-                    <option disabled defaultValue>Default</option>
-                    <option value="option1">Price High To Low</option>
-                    <option value="option2">Price Low To High</option>
-                </select>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 my-[150px] gap-[50px]">
-                {
-                    allRooms.map(room => <SingleRoom
-                        key={room.title}
-                        room={room}
-                    ></SingleRoom>)
-                }
+        <div className="flex justify-center">
+            <div className="flex flex-col items-end gap-4 my-[10px]">
+                <div className="flex gap-5">
+                    <select
+                        onChange={
+                            (e) => setPrice(e.target.value)
+                        }
+                        className="input input-bordered">
+                        <option disabled selected>Choose one</option>
+                        <option value="asc">From low to high</option>
+                        <option value="desc">From high to low</option>
+                    </select>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-[50px]">
+                    {
+                        allRooms?.data?.map(room => <SingleRoom
+                            key={room._id}
+                            room={room}
+                        ></SingleRoom>)
+                    }
+                </div>
             </div>
         </div>
     );

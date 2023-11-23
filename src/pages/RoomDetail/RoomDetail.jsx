@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { GoChecklist } from 'react-icons/go';
 import moment from 'moment';
 import { useContext, useEffect } from "react";
@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import formatDate from "../../utilities/DateFormater";
 import ReviewRoom from "./ReviewRoom";
 import ReviewContainer from "./ReviewContainer";
+import daysUntil from "../../utilities/DaysRemaining";
 
 const RoomDetail = () => {
     const roomDetail = useLoaderData();
@@ -17,24 +18,21 @@ const RoomDetail = () => {
     const { user } = useContext(AuthContext);
     const email = user?.email;
     let { _id, location, title, description, price, room_size, availability, featured, available_seats, imageUrls, special_offers, booking, reviews } = roomDetail;
-    console.log(booking)
+    console.log(booking);
+    const navigate = useNavigate();
 
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //TODO booking 
-    let isBooked;
-    const today = moment().format("YYYY-MM-DD");
-    if (booking.length <= 0) {
-        isBooked = false;
+    let highestBooking = booking[0];
+    for (let i = 0; i < booking.length; i++) {
+        if (highestBooking < booking[i]) {
+            highestBooking = booking[i];
+        }
+        console.log(booking[i])
     }
-    else {
-        const booked = booking.find(singleBooking => singleBooking == today);
-        console.log(booked)
-        if (booked) {
-            isBooked = true;
-        }
-        else {
-            isBooked = false;
-        }
+
+    let isBooked = false;
+    const remainingDays = daysUntil(highestBooking);
+    if (remainingDays >= 1) {
+        isBooked = true;
     }
     console.log(isBooked)
 
@@ -43,7 +41,7 @@ const RoomDetail = () => {
     const datePicker = (e) => {
         e.preventDefault();
         const bookedDate = formatDate(date);
-        booking = [...booking, bookedDate];
+        console.log(bookedDate);
         const bookingInfo = {
             email,
             bookedDate,
@@ -52,8 +50,11 @@ const RoomDetail = () => {
             location,
             description,
             image: imageUrls[0]
-        }
-        fetch('http://localhost:5000/bookings', {
+        };
+        booking = [...booking, bookedDate];
+
+
+        fetch('https://oasis-inn-server.vercel.app/bookings', {
             method: "POST",
             headers: {
                 "content-type": "Application/json"
@@ -64,7 +65,8 @@ const RoomDetail = () => {
             .then(data => {
                 console.log(data)
             })
-        fetch(`http://localhost:5000/roomDetail/${_id}`, {
+
+        fetch(`https://oasis-inn-server.vercel.app/roomDetail/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "Application/json"
@@ -74,9 +76,8 @@ const RoomDetail = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                navigate('/rooms')
             })
-
-
     }
     //TODO booking 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -124,37 +125,33 @@ const RoomDetail = () => {
                             {
                                 // isBooked && <p>Booking will be available after: {highestCheckOut}</p>
                             }
-                            <h3>From</h3>
-                            <DatePicker
-                                showIcon
-                                selected={date}
-                                onChange={(date) => setDate(date)}
-                            />
-                            {
-                                !isBooked ?
-                                    <p className="text-lg">Choose a date you want to book at <span>{location}</span></p>
-                                    :
-                                    <p className="text-lg">SORRY!!!!!!! The Room is booked!<span></span></p>
-                            }
+                            <div className="pb-[160px]">
+                                <DatePicker
+                                    showIcon
+                                    selected={date}
+                                    onChange={(date) => setDate(date)}
+                                />
+                            </div>
+                            <p className="text-lg">Choose a date you want to book at <span>{location}</span></p>
                         </div>
                         {
                             !isBooked ?
                                 <button
                                     onClick={datePicker}
-                                    className="btn mb-5 mx-3 md:mx-8">Book now!</button>
+                                    className="btn btn-primari mb-5 mx-3 md:mx-8">Book now!</button>
                                 : <button
-                                    className="btn mb-5 mx-3 md:mx-8" disabled>Booked</button>
+                                    className="btn btn-bg mb-5 mx-3 md:mx-8" disabled>Booked</button>
                         }
                     </div>
                 </div>
             </div>
-            {/* <ReviewRoom
+            <ReviewRoom
                 email={email}
                 _id={_id}
             ></ReviewRoom>
             <ReviewContainer
                 _id={_id}
-            ></ReviewContainer> */}
+            ></ReviewContainer>
         </div>
     );
 };

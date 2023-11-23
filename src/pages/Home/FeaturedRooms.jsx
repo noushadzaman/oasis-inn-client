@@ -13,7 +13,7 @@ const FeaturedRooms = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://oasis-inn-server.vercel.app/rooms')
             .then(res => res.json())
             .then(data => setAllRooms(data))
     }, []);
@@ -29,7 +29,7 @@ const FeaturedRooms = () => {
         <div className='my-[80px]'>
             <h1 className='text-black text-center text-[20px] md:text-4xl lg:text-5xl font-semibold ml-10 mb-[15px]'>Featured Premium Rooms</h1>
             <p className='text-black text-center text-[12px] md:text-xl ml-10 mb-[15px]'>Experience the Pinnacle of Comfort and Elegance</p>
-            <Swiper
+            {/* <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
                 pagination={{
@@ -40,14 +40,14 @@ const FeaturedRooms = () => {
             >
                 {
                     featuredRooms.map(featuredRoom => <SwiperSlide
-                        key={featuredRoom}
-                    >
-                        <img
-                            onClick={navigate(`/roomDetail/${featuredRoom._id}`)}
-                            className='max-w-[450px] h-[100px] md:h-[300px] object-cover rounded-lg' src={featuredRoom.imageUrls[0]} alt="" />
+                        // key={featuredRoom}
+                    // >
+                    //     <img
+                    //         onClick={navigate(`/roomDetail/${featuredRoom._id}`)}
+                    //         className='max-w-[450px] h-[100px] md:h-[300px] object-cover rounded-lg' src={featuredRoom.imageUrls[0]} alt="" />
                     </SwiperSlide>)
                 }
-            </Swiper>
+            </Swiper> */}
         </div>
     );
 };

@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/roomDetail/:id',
                 element: <PrivateRoute><RoomDetail></RoomDetail></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/roomDetail/${params.id}`)
+                loader: ({ params }) => fetch(`https://oasis-inn-server.vercel.app/roomDetail/${params.id}`)
             },
             {
                 path: '/myBookings',

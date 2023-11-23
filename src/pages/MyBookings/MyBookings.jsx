@@ -1,27 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import SingleMyBooking from "./SingleMyBooking";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyBookings = () => {
     const [myBookings, setMyBookings] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const { user } = useContext(AuthContext);
     const email = user?.email;
-    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${email}`)
+        fetch(`https://oasis-inn-server.vercel.app/bookings?email=${email}`)
             .then(res => res.json())
             .then(data => {
-                setMyBookings(data);
+                setMyBookings(data)
+                setIsLoading(false)
             })
     }, [email]);
-    // useEffect(() => {
-    //     axiosSecure.get(`/bookings?email=${user?.email}`)
-    //         .then(res => setMyBookings(res.data))
-    // }, [email, axiosSecure]);
-
-    console.log(myBookings)
 
     return (
         <div>
@@ -40,12 +34,16 @@ const MyBookings = () => {
                     </thead>
                     <tbody>
                         {
-                            myBookings.map(myBooking => <SingleMyBooking
-                                key={myBooking._id}
-                                myBooking={myBooking}
-                                myBookings={myBookings}
-                                setMyBookings={setMyBookings}
-                            ></SingleMyBooking>)
+                            isLoading ?
+                                <div className="w-[50px] mx-auto mt-[170px]">
+                                    <div className="loading loading-spinner w-[100px]"></div>
+                                </div>
+                                : myBookings?.map(myBooking => <SingleMyBooking
+                                    key={myBooking._id}
+                                    myBooking={myBooking}
+                                    myBookings={myBookings}
+                                    setMyBookings={setMyBookings}
+                                ></SingleMyBooking>)
                         }
                     </tbody>
                 </table>
