@@ -34,7 +34,7 @@ const MyBookings = () => {
                     </thead>
                     <tbody>
                         {
-                            isLoading ?
+                            isLoading && myBookings ?
                                 <div className="w-[50px] mx-auto mt-[170px]">
                                     <div className="loading loading-spinner w-[100px]"></div>
                                 </div>

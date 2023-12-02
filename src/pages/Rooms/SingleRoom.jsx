@@ -7,15 +7,14 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 
 const SingleRoom = ({ room }) => {
-    const { _id, location, availability, title, price, imageUrls, reviews } = room;
+    const { _id, location, availability, title, price, imageUrls = [], reviews } = room;
     const navigate = useNavigate();
 
     return (
         <div
             onClick={() => navigate(`/roomDetail/${_id}`)}
             className="card w-96 justify-self-center cursor-pointer">
-            <figure className='rounded-xl'>
-
+            <figure className='rounded-[5px]'>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}
@@ -28,9 +27,9 @@ const SingleRoom = ({ room }) => {
                     className="mySwiper"
                 >
                     {
-                        imageUrls?.map((image, index) => <SwiperSlide
-                            key={index}
-                        ><img className='h-[290px] w-[100%]' src={image} alt="Shoes" />
+                        imageUrls?.map((image) => <SwiperSlide
+                            key={image}
+                        ><img className='h-[290px] w-[100%]' src={image} />
                         </SwiperSlide>)
                     }
                 </Swiper>
@@ -40,7 +39,7 @@ const SingleRoom = ({ room }) => {
                     <div className="card-title">
                         {location}
                     </div>
-                    <div className="indicator-item badge rounded-lg badge-secondary whitespace-nowrap">
+                    <div className="indicator-item badge rounded-[5px] badge-secondary whitespace-nowrap">
                         {
                             availability ? "AVAILABLE" : "NOT AVAILABLE"
                         }
@@ -51,7 +50,7 @@ const SingleRoom = ({ room }) => {
                     <p><span className='font-semibold'>${price}</span> night</p>
                     {
                         !reviews?.length > 0 ?
-                            <div className="indicator-item badge rounded-lg badge-secondary">{reviews?.length}</div>
+                            <div className="indicator-item badge rounded-[5px] badge-secondary">{reviews?.length}</div>
                             : ""
                     }
                 </div>

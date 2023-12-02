@@ -94,7 +94,7 @@ const RoomDetail = () => {
                     imageUrls.map(imageUrl => <img
                         key={imageUrl}
                         src={imageUrl}
-                        className={`h-full  ${imageUrl == imageUrls[2] ? "rounded-tr-lg" : ""} ${imageUrl == imageUrls[4] && "rounded-br-lg"} ${imageUrl == imageUrls[0] ? 'col-span-5 row-span-2 rounded-l-xl' : 'col-span-2 row-span-1'}`}
+                        className={`h-full  ${imageUrl == imageUrls[2] ? "rounded-tr-[5px]" : ""} ${imageUrl == imageUrls[4] && "rounded-br-[5px]"} ${imageUrl == imageUrls[0] ? 'col-span-5 row-span-2 rounded-l-[5px]' : 'col-span-2 row-span-1'}`}
                     ></img>)
                 }
             </div>
@@ -125,7 +125,7 @@ const RoomDetail = () => {
                             {
                                 // isBooked && <p>Booking will be available after: {highestCheckOut}</p>
                             }
-                            <div className="pb-[160px]">
+                            <div className="pb-[190px]">
                                 <DatePicker
                                     showIcon
                                     selected={date}
@@ -138,7 +138,7 @@ const RoomDetail = () => {
                             !isBooked ?
                                 <button
                                     onClick={datePicker}
-                                    className="btn btn-primari mb-5 mx-3 md:mx-8">Book now!</button>
+                                    className="button-primari mb-5 mx-3 md:mx-8">Book now!</button>
                                 : <button
                                     className="btn btn-bg mb-5 mx-3 md:mx-8" disabled>Booked</button>
                         }

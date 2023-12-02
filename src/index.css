@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Marcellus', serif;
+    /* font-family: 'Jost', sans-serif; */
 }
 
 .promotion-section {
@@ -16,71 +15,69 @@ body {
     background-size: cover;
 }
 
-.btn-primari {
-    display: inline-block;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 14px;
-    border-radius: 0.5em;
+.button-primari {
+    padding: 10px 25px;
+    border: unset;
+    /* border-radius: 5px; */
+    color: #212121;
+    z-index: 1;
     background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    box-shadow: 6px 6px 12px #c5c5c5,
-        -6px -6px 12px #ffffff;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px #b99d75;
+    box-shadow: 4px 8px 19px -3px #b99d75;
+    transition: all 250ms;
+    overflow: hidden;
 }
 
-.btn-primari:active {
-    color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5,
-        inset -4px -4px 12px #ffffff;
-}
-
-.btn-primari:before {
+.button-primari::before {
     content: "";
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #b99d75;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px #b99d75;
+    box-shadow: 4px 8px 19px -3px #b99d75;
+    transition: all 250ms
 }
 
-.btn-primari:after {
+.button-primari:hover {
+    color: #e8e8e8;
+}
+
+.button-primari:hover::before {
+    width: 100%;
+}
+
+.nav-a {
+    letter-spacing: 3.9px;
+    text-decoration: none solid rgb(62, 57, 48);
+    color: #776F60;
+    position: relative;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.read-more:hover .line {
+    width: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-a::before {
     content: "";
     position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #6A2C70;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -2;
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #776F60;
+    transition: all 0.3s ease;
 }
 
-.btn-primari:hover {
-    color: #ffffff;
-    border: 1px solid #6A2C70;
-}
-
-.btn-primari:hover:before {
-    top: -35%;
-    background-color: #6A2C70;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.btn-primari:hover:after {
-    top: -45%;
-    background-color: #6A2C70;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+.nav-a:hover::before {
+    width: 100%;
 }

@@ -79,7 +79,7 @@ const ReviewRoom = ({ email, _id }) => {
                 />
             </div>
             <textarea placeholder='comment' className='border w-[100%] p-3' name="comment" id="" cols="30" rows="10" required></textarea>
-            <input className='btn btn-primary' type="submit" value="Review" />
+            <button className='btn btn-primary' type="submit" >Review</button>
         </form>
     );
 };

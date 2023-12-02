@@ -30,7 +30,7 @@ const ReviewContainer = ({ _id }) => {
                 reviews?.data?.map(roomReview => <div
                     key={roomReview._id}
                 >
-                    <div className="">
+                    <div className="border p-5">
                         <div className="flex gap-3">
                             <img className="w-[50px] h-[50px] rounded-full" src="https://i.ibb.co/HCB91k8/room12img3.webp" alt="" />
                             <div>
