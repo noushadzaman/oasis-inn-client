@@ -17,5 +17,3 @@
 * Optional pages such as About Us, FAQ, and Testimonials contribute to a comprehensive user journey, offering additional insights and building trust in the hotel booking platform.
 
 * A user-friendly Review System encourages guests to share their experiences, providing valuable insights for potential customers and fostering a sense of community.
-
-* The application's commitment to excellence is demonstrated through a minimum of 20 meaningful Git commits on the client-side and 10 on the server-side, along with clear documentation in the README file.
