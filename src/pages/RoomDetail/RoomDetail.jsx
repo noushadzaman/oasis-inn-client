@@ -11,6 +11,7 @@ import formatDate from "../../utilities/DateFormater";
 import ReviewRoom from "./ReviewRoom";
 import ReviewContainer from "./ReviewContainer";
 import daysUntil from "../../utilities/DaysRemaining";
+import RoomDetailsSlider from "./RoomDetailsSlider";
 
 const RoomDetail = () => {
     const roomDetail = useLoaderData();
@@ -98,6 +99,11 @@ const RoomDetail = () => {
                     ></img>)
                 }
             </div>
+            {/* <div>
+                <RoomDetailsSlider
+                    imageUrls={imageUrls}
+                ></RoomDetailsSlider>
+            </div> */}
             <div>
                 <h3 className="text-2xl mt-6 mb-3">About this place</h3>
                 <p>{description}</p>

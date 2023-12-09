@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         logIn(email, password)
-            .then(data => {
+            .then(() => {
                 setError('');
                 navigate('/');
                 Swal.fire({
@@ -33,7 +34,6 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleSign()
             .then(() => {
-                navigate('/');
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -41,6 +41,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 2500
                 })
+                // navigate('/');
             })
             .catch(data => {
                 console.log(data)
@@ -71,7 +72,11 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="button-primari">Login</button>
                             <button
-                                onClick={handleGoogleLogin} className="button-primari mt-3">google</button>
+                                onClick={handleGoogleLogin} className="button-primari mt-3">
+                                <div className="flex items-center justify-center gap-3">
+                                    <FaGoogle /><span>Continue with google</span>
+                                </div>
+                            </button>
                         </div>
                     </form>
                 </div>

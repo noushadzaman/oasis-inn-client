@@ -29,16 +29,16 @@ const Register = () => {
         const photFile = { image: form.photo[0] }
         console.log(name, email, password);
         console.log(photo);
-        axios.post(image_hosting_api, photFile, {
-            headers: {
-                "content-Type": "multipart/form-data"
-            },
-        })
-            .then(res => {
-                const image = res.data.data.display_url;
+        // axios.post(image_hosting_api, photFile, {
+        //     headers: {
+        //         "content-Type": "multipart/form-data"
+        //     },
+        // })
+        //     .then(res => {
+        //         const image = res.data.data.display_url;
                 createUser(email, password)
                     .then(() => {
-                        setPhotoAndName(name, image)
+                        // setPhotoAndName(name, image)
                         setError('');
                         navigate('/');
                         Swal.fire({
@@ -52,7 +52,7 @@ const Register = () => {
                     .catch(err => {
                         setError(err.message);
                     })
-            })
+            // })
     }
 
     return (
@@ -86,7 +86,7 @@ const Register = () => {
                         </div>
 
                         <div className="form-control">
-                            <input  {...register("photo", { required: true })} type="file" className="rounded-[5px] mt-3 file-input-bordered file-input-sm file-input file-input-ghost max-w-xs" name="photo" />
+                            <input  {...register("photo")} type="file" className="rounded-[5px] mt-3 file-input-bordered file-input-sm file-input file-input-ghost max-w-xs" name="photo" />
                             <Link to="/login" className="text-[#b99d75] mt-5">Login here!</Link >
                             <p className="text-error">{error}</p>
                         </div>

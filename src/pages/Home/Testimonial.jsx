@@ -1,65 +1,36 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRef } from 'react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
 
 
 const Testimonial = () => {
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-        progressCircle.current.style.setProperty('--progress', 1 - progress);
-        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
+    const [sliderRef] = useKeenSlider({
+        slides: {
+            perView: 2,
+        },
+    })
+
     return (
-        <div>
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <div className='flex flex-col justify-center items-center'>
-                        <div className="avatar">
-                            <div className="w-[25%] rounded-full mx-auto">
-                                <img src="https://i.ibb.co/D88RqYg/frames-for-your-heart-Fqqi-Av-Jejto-unsplash-1.jpg" />
+        <div className="mb-[50px]">
+            <div ref={sliderRef} className="keen-slider">
+                <div className="keen-slider__slide number-slide1">
+                    <div className="flex flex-col  ml-5">
+                        <div className="flex gap-5 items-center">
+                            <div className="avatar">
+                                <div className="w-[80px] h-[80px] rounded-full mx-auto">
+                                    <img src="https://i.ibb.co/D88RqYg/frames-for-your-heart-Fqqi-Av-Jejto-unsplash-1.jpg" />
+                                </div>
+                            </div>
+                            <div className='flex flex-col'>
+                                <h1 className=' font-semibold'>Name:</h1>
+                                <p className='mt-[15px] font-semibold'>Review:</p>
                             </div>
                         </div>
-                        <h1 className='mt-[35px] font-semibold'>Name:</h1>
-                        <p className='mt-[15px] font-semibold'>Rating:</p>
-                        <p className='mt-[15px] font-semibold'>Comment:</p>
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='flex flex-col justify-center items-center'>
-                        <div className="avatar">
-                            <div className="w-[25%] rounded-full mx-auto">
-                                <img src="https://i.ibb.co/D88RqYg/frames-for-your-heart-Fqqi-Av-Jejto-unsplash-1.jpg" />
-                            </div>
-                        </div>
-                        <h1 className='mt-[35px] font-semibold'>Name:</h1>
-                        <p className='mt-[15px] font-semibold'>Rating:</p>
-                        <p className='mt-[15px] font-semibold'>Comment:</p>
-                    </div>
-                </SwiperSlide>
-                <div className="autoplay-progress text-white" slot="container-end">
-                    <svg viewBox="0 0 0 0" ref={progressCircle}>
-                    </svg>
-                    <span ref={progressContent}></span>
                 </div>
-            </Swiper>
+               
+
+
+            </div>
         </div>
     );
 };

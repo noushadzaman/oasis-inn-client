@@ -5,14 +5,17 @@ import auth from "../config/firebase.config";
 import axios from 'axios';
 
 export const AuthContext = createContext();
-const provider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const googleProvider = new GoogleAuthProvider();
     const [loading, setLoading] = useState(true);
+
     const googleSign = () => {
-        return signInWithPopup(auth, provider)
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider)
     }
+
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
@@ -30,6 +33,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
     const logOut = () => {
         setLoading(true);
         return signOut(auth);
@@ -68,6 +72,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleSign,
     }
+    
     return (
         <AuthContext.Provider value={userInfo}>
             {children}
